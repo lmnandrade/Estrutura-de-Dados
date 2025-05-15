@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define COUNTRY_LEN 32
+#define MAX_LEN 32
 
 int main() {
     FILE *f = fopen("data.dat", "rb");
@@ -10,16 +10,33 @@ int main() {
         return 1;
     }
 
+    char date[MAX_LEN];
+    char time_utc[MAX_LEN];
+    char city[MAX_LEN];
+    char country[MAX_LEN];
+
+    float latitude;
     float longitude;
-    char country[COUNTRY_LEN];
+    float magnitude;
+    float depth;
+    float impact_score;
 
-    while (fread(&longitude, sizeof(float), 1, f) == 1 &&
-           fread(country, sizeof(char), COUNTRY_LEN, f) == COUNTRY_LEN) {
-        
-        // Ensure string is null-terminated
-        country[COUNTRY_LEN - 1] = '\0';
+    while (fread(date, sizeof(char), MAX_LEN, f) == MAX_LEN &&
+           fread(time_utc, sizeof(char), MAX_LEN, f) == MAX_LEN &&
+           fread(city, sizeof(char), MAX_LEN, f) == MAX_LEN &&
+           fread(country, sizeof(char), MAX_LEN, f) == MAX_LEN &&
+           fread(&latitude, sizeof(float), 1, f) == 1 &&
+           fread(&longitude, sizeof(float), 1, f) == 1 &&
+           fread(&magnitude, sizeof(float), 1, f) == 1 &&
+           fread(&depth, sizeof(float), 1, f) == 1 &&
+           fread(&impact_score, sizeof(float), 1, f) == 1) {
 
-        printf("Longitude: %.2f, Country: %s\n", longitude, country);
+        // Ensure strings are null-terminated
+        date[MAX_LEN - 1] = '\0';
+        time_utc[MAX_LEN - 1] = '\0';
+        city[MAX_LEN - 1] = '\0';
+        country[MAX_LEN - 1] = '\0';
+
     }
 
     fclose(f);
