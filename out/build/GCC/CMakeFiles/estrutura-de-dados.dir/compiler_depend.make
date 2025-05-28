@@ -161,7 +161,11 @@ CMakeFiles/estrutura-de-dados.dir/csv_reader.cpp.obj: C:/Users/rebek/OneDrive/Do
   C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/csv_reader.cpp \
   C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/csv_reader.h
 
+<<<<<<< Updated upstream
 CMakeFiles/estrutura-de-dados.dir/main.cpp.obj: C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/main.cpp \
+=======
+CMakeFiles/estrutura-de-dados.dir/main.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/main.cpp \
+>>>>>>> Stashed changes
   C:/msys64/ucrt64/include/_mingw.h \
   C:/msys64/ucrt64/include/_mingw_mac.h \
   C:/msys64/ucrt64/include/_mingw_off_t.h \
@@ -313,11 +317,20 @@ CMakeFiles/estrutura-de-dados.dir/main.cpp.obj: C:/Users/rebek/OneDrive/Document
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+<<<<<<< Updated upstream
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
   C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/main.cpp
 
 
 C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/csv_reader.cpp:
+=======
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h
+
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/uniform_int_dist.h:
+
+C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/csv_reader.cpp:
+>>>>>>> Stashed changes
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/invoke.h:
 
@@ -654,3 +667,17 @@ C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h:
 C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_algorithm_defs.h:
 
 C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/main.cpp:
+
+C:/msys64/ucrt64/include/c++/14.2.0/algorithm:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/algorithmfwd.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_algo.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_heap.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_tempbuf.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_algorithm_defs.h:
