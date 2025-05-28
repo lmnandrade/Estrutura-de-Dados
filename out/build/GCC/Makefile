@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados
+CMAKE_SOURCE_DIR = C:\Users\rebek\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC
+CMAKE_BINARY_DIR = C:\Users\rebek\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -77,7 +77,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	"C:\Program Files\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/out/build/GCC/CPackSourceConfig.cmake
+	"C:\Program Files\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/out/build/GCC/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -116,9 +116,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rebek\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles C:\Users\rebek\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rebek\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles 0
 .PHONY : all
 
 # The main clean target

@@ -1,5 +1,5 @@
 CMakeFiles/estrutura-de-dados.dir/main.cpp.obj: \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\main.cpp \
+ C:\Users\rebek\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\main.cpp \
  C:/msys64/ucrt64/include/c++/14.2.0/iostream \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
