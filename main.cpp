@@ -1,9 +1,11 @@
+/*
 #include <iostream>     // Para std::cout e std::cerr
 #include <list>         // Para std::list
 #include <vector>       // Para std::vector (se lerCSV retorna vector)
 #include <string>       // Para std::string
 #include <algorithm>    // Para std::min
 #include "csv_reader.h" // Inclui a interface da sua biblioteca CSV (assumindo struct Registro aqui)
+
 
 int main() {
     std::string nomearqui = "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/earthquake_dataset.csv"; // Nome do arquivo CSV a ser lido
@@ -60,4 +62,16 @@ int main() {
 
 
     return 0; // Indica que o programa executou com sucesso
+}
+    */
+
+#include <iostream>     // Para std::cout e std::cerr
+#include <string>       // Para std::string
+#include <algorithm>    // Para std::min
+// Função principal - única função main no código
+int main() {
+   int num;
+   printf ("Type a number: ");
+   scanf("%d", &num);
+   printf("O número é %d", num);
 }
