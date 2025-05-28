@@ -26,11 +26,19 @@
 	>
 	<Testing>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		<StartDateTime>May 28 18:14 Hora oficial do Brasil</StartDateTime>
 		<StartTestTime>1748466848</StartTestTime>
 		<TestList/>
 		<EndDateTime>May 28 18:14 Hora oficial do Brasil</EndDateTime>
 		<EndTestTime>1748466848</EndTestTime>
+=======
+		<StartDateTime>May 28 18:46 Hora oficial do Brasil</StartDateTime>
+		<StartTestTime>1748468817</StartTestTime>
+		<TestList/>
+		<EndDateTime>May 28 18:46 Hora oficial do Brasil</EndDateTime>
+		<EndTestTime>1748468817</EndTestTime>
+>>>>>>> Stashed changes
 =======
 		<StartDateTime>May 28 18:46 Hora oficial do Brasil</StartDateTime>
 		<StartTestTime>1748468817</StartTestTime>

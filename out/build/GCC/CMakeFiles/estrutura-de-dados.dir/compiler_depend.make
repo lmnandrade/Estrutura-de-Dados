@@ -162,7 +162,11 @@ CMakeFiles/estrutura-de-dados.dir/csv_reader.cpp.obj: C:/Users/rebek/OneDrive/Do
   C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/csv_reader.h
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 CMakeFiles/estrutura-de-dados.dir/main.cpp.obj: C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/main.cpp \
+=======
+CMakeFiles/estrutura-de-dados.dir/main.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/main.cpp \
+>>>>>>> Stashed changes
 =======
 CMakeFiles/estrutura-de-dados.dir/main.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/main.cpp \
 >>>>>>> Stashed changes
@@ -318,6 +322,7 @@ CMakeFiles/estrutura-de-dados.dir/main.cpp.obj: C:/Users/letic/OneDrive/Document
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
   C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/main.cpp
 
@@ -327,6 +332,11 @@ C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/csv_rea
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h
 
 
+=======
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h
+
+
+>>>>>>> Stashed changes
 C:/msys64/ucrt64/include/c++/14.2.0/bits/uniform_int_dist.h:
 
 C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/csv_reader.cpp:
