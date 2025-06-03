@@ -1,40 +1,44 @@
-#include "csv_reader.h" // Inclui a declaração da função e da estrutura
-#include <iostream>     // Para std::cerr
-#include <fstream>      // Para std::ifstream
-#include <sstream>      // Para std::stringstream
+/*
+#include "csv_reader.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <algorithm> // Para std::remove_if
 
-// Implementação da função lerCSV
+// Função auxiliar para remover espaços em branco extras de uma string
+static std::string trim(const std::string& str) {
+    size_t first = str.find_first_not_of(" \t\r\n");
+    if (first == std::string::npos) return "";
+    size_t last = str.find_last_not_of(" \t\r\n");
+    return str.substr(first, (last - first + 1));
+}
+
 std::vector<Registro> lerCSV(const std::string& nomearqui) {
-    std::vector<Registro> registros; // Vetor para armazenar os registros lidos
-    std::ifstream file(nomearqui);   // Abre o arquivo para leitura
+    std::vector<Registro> registros;
+    std::ifstream file(nomearqui);
 
-    // Verifica se o arquivo foi aberto com sucesso
     if (!file.is_open()) {
-        std::cerr << "Error: Could not open the file '" << nomearqui << "'" << std::endl;
-        // Em um cenário de biblioteca mais robusta, você poderia lançar uma exceção aqui.
-        return registros; // Retorna um vetor vazio em caso de erro
+        std::cerr << "Erro: Não foi possível abrir o arquivo '" << nomearqui << "'\n";
+        return registros;
     }
 
     std::string linha;
-    // Lê e ignora a primeira linha (cabeçalho do CSV)
-    // Verifica se a leitura da linha de cabeçalho foi bem-sucedida antes de continuar
+    // Lê o cabeçalho
     if (!std::getline(file, linha)) {
-         std::cerr << "Error: Could not read header line from '" << nomearqui << "'" << std::endl;
-         return registros; // Retorna vazio se não conseguir ler nem o cabeçalho
+        std::cerr << "Erro: Não foi possível ler o cabeçalho de '" << nomearqui << "'\n";
+        return registros;
     }
 
-
-    // Loop principal para ler cada linha do arquivo após o cabeçalho
-
-    
-
+    // Lê cada linha do arquivo
+    int linha_num = 1;
     while (std::getline(file, linha)) {
-        std::stringstream ss(linha); // Cria um stringstream a partir da linha lida
-        Registro registro;           // Cria um novo objeto Registro para preencher
+        linha_num++;
+        if (linha.empty()) continue; // Pula linhas em branco
 
-        // Usa std::getline com o delimitador ',' para extrair cada campo
-        // É importante que a ordem das chamadas std::getline corresponda à ordem das colunas no CSV
-        // e aos membros da struct Registro.
+        std::stringstream ss(linha);
+        Registro registro;
+
+        // Lê cada campo, respeitando a ordem do CSV
         if (std::getline(ss, registro.date, ',') &&
             std::getline(ss, registro.time, ',') &&
             std::getline(ss, registro.city, ',') &&
@@ -43,15 +47,110 @@ std::vector<Registro> lerCSV(const std::string& nomearqui) {
             std::getline(ss, registro.lon, ',') &&
             std::getline(ss, registro.mag, ',') &&
             std::getline(ss, registro.depth, ',') &&
-            // Para o último campo, não há delimitador ',' após ele na linha
-            std::getline(ss, registro.imps)) { // Lê o restante da linha para o último campo
-             registros.push_back(registro); // Adiciona o registro preenchido ao vetor
+            std::getline(ss, registro.impactScore)) {
+
+            // Remove espaços em branco extras dos campos
+            registro.date = trim(registro.date);
+            registro.time = trim(registro.time);
+            registro.city = trim(registro.city);
+            registro.ctry = trim(registro.ctry);
+            registro.lat = trim(registro.lat);
+            registro.lon = trim(registro.lon);
+            registro.mag = trim(registro.mag);
+            registro.depth = trim(registro.depth);
+            registro.impactScore = trim(registro.impactScore);
+
+            registros.push_back(registro);
         } else {
-            // Lida com linhas malformadas (que não têm o número esperado de colunas)
-            std::cerr << "Warning: Skipping malformed line: " << linha << std::endl;
+            std::cerr << "Aviso: Linha malformada ignorada (" << linha_num << "): " << linha << std::endl;
         }
     }
 
-    file.close(); // Fecha o arquivo (opcional, o destrutor de ifstream faz isso)
-    return registros; // Retorna o vetor contendo todos os registros lidos
+    file.close();
+    return registros;
+} */
+
+#include "csv_reader.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
+
+// Função para dividir uma string por um delimitador
+std::vector<std::string> splitString(const std::string& str, char delimiter) {
+    std::vector<std::string> tokens;
+    std::string token;
+    std::istringstream tokenStream(str);
+    
+    while (std::getline(tokenStream, token, delimiter)) {
+        tokens.push_back(token);
+    }
+    
+    return tokens;
+}
+
+// Função para ler o arquivo CSV e retornar um vetor de registros
+std::vector<EarthquakeRecord> readEarthquakeCSV(const std::string& filename) {
+    std::vector<EarthquakeRecord> records;
+    std::ifstream file(filename);
+    
+    if (!file.is_open()) {
+        std::cerr << "Erro ao abrir o arquivo: " << filename << std::endl;
+        return records;
+    }
+    
+    std::string line;
+    
+    // Ler a primeira linha (cabeçalho) e descartá-la
+    std::getline(file, line);
+    
+    // Ler as linhas de dados
+    while (std::getline(file, line)) {
+        std::vector<std::string> fields = splitString(line, ',');
+        
+        // Verificar se a linha tem o número correto de campos
+        if (fields.size() >= 9) {
+            EarthquakeRecord record;
+            record.date = fields[0];
+            record.time = fields[1];
+            record.city = fields[2];
+            record.country = fields[3];
+            record.latitude = fields[4];
+            record.longitude = fields[5];
+            record.magnitude = fields[6];
+            record.depth = fields[7];
+            record.impactScore = fields[8];
+            
+            records.push_back(record);
+        } else {
+            std::cerr << "Linha com formato incorreto: " << line << std::endl;
+        }
+    }
+    
+    file.close();
+    std::cout << "Total de registros lidos: " << records.size() << std::endl;
+    return records;
+}
+
+// Função para exibir um registro
+void displayRecord(const EarthquakeRecord& record) {
+    std::cout << "Data: " << record.date << std::endl;
+    std::cout << "Hora (UTC): " << record.time << std::endl;
+    std::cout << "Cidade: " << record.city << std::endl;
+    std::cout << "País: " << record.country << std::endl;
+    std::cout << "Latitude: " << record.latitude << std::endl;
+    std::cout << "Longitude: " << record.longitude << std::endl;
+    std::cout << "Magnitude: " << record.magnitude << std::endl;
+    std::cout << "Profundidade (km): " << record.depth << std::endl;
+    std::cout << "Pontuação de Impacto: " << record.impactScore << std::endl;
+    std::cout << "------------------------" << std::endl;
+}
+
+// Função para exibir todos os registros
+void displayAllRecords(const std::vector<EarthquakeRecord>& records) {
+    std::cout << "Total de registros: " << records.size() << std::endl;
+    
+    for (size_t i = 0; i < records.size(); i++) {
+        std::cout << "Registro #" << (i + 1) << std::endl;
+        displayRecord(records[i]);
+    }
 }

@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados
+# Install script for directory: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/out/install/GCC")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/out/install/GCC")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,7 +40,7 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/out/build/GCC/install_local_manifest.txt"
+  file(WRITE "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/out/build/GCC/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -56,6 +56,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/out/build/GCC/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/out/build/GCC/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

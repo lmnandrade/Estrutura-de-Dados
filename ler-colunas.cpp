@@ -3,11 +3,11 @@
 
 #define MAX_LEN 32
 
-int main() {
-    FILE *f = fopen("data.dat", "rb");
+void ler_colunas(const char* filename) {
+    FILE *f = fopen(filename, "rb");
     if (!f) {
         perror("Error opening file");
-        return 1;
+        return;
     }
 
     char date[MAX_LEN];
@@ -37,8 +37,8 @@ int main() {
         city[MAX_LEN - 1] = '\0';
         country[MAX_LEN - 1] = '\0';
 
+        // Aqui você pode processar os dados lidos
     }
 
     fclose(f);
-    return 0;
 }

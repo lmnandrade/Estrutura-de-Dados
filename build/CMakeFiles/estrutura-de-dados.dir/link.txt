@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\estrutura-de-dados.dir/objects.a
-C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\estrutura-de-dados.dir/objects.a @CMakeFiles\estrutura-de-dados.dir\objects1.rsp
-C:\msys64\ucrt64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\estrutura-de-dados.dir/objects.a -Wl,--no-whole-archive -o estrutura-de-dados.exe -Wl,--out-implib,libestrutura-de-dados.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\estrutura-de-dados.dir\linkLibs.rsp

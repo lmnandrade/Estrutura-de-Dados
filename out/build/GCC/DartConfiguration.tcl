@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados
-BuildDirectory: C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/out/build/GCC
+SourceDirectory: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados
+BuildDirectory: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/out/build/GCC
 
 # Where to place the cost data store
 CostDataFile: 
@@ -27,7 +27,7 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "C:/Program Files/CMake/bin/cmake.exe" "C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados"
+ConfigureCommand: "C:/Program Files/CMake/bin/cmake.exe" "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados"
 MakeCommand: C:/Program\ Files/CMake/bin/cmake.exe --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 

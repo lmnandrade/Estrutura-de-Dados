@@ -146,17 +146,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named estrutura-de-dados
+# Target rules for targets named project
 
 # Build rule for target.
-estrutura-de-dados: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 estrutura-de-dados
-.PHONY : estrutura-de-dados
+project: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 project
+.PHONY : project
 
 # fast build rule for target.
-estrutura-de-dados/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\estrutura-de-dados.dir\build.make CMakeFiles/estrutura-de-dados.dir/build
-.PHONY : estrutura-de-dados/fast
+project/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/build
+.PHONY : project/fast
 
 #=============================================================================
 # Target rules for targets named Experimental
@@ -527,7 +527,7 @@ csv_reader.obj: csv_reader.cpp.obj
 
 # target to build an object file
 csv_reader.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\estrutura-de-dados.dir\build.make CMakeFiles/estrutura-de-dados.dir/csv_reader.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/csv_reader.cpp.obj
 .PHONY : csv_reader.cpp.obj
 
 csv_reader.i: csv_reader.cpp.i
@@ -535,7 +535,7 @@ csv_reader.i: csv_reader.cpp.i
 
 # target to preprocess a source file
 csv_reader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\estrutura-de-dados.dir\build.make CMakeFiles/estrutura-de-dados.dir/csv_reader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/csv_reader.cpp.i
 .PHONY : csv_reader.cpp.i
 
 csv_reader.s: csv_reader.cpp.s
@@ -543,15 +543,87 @@ csv_reader.s: csv_reader.cpp.s
 
 # target to generate assembly for a file
 csv_reader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\estrutura-de-dados.dir\build.make CMakeFiles/estrutura-de-dados.dir/csv_reader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/csv_reader.cpp.s
 .PHONY : csv_reader.cpp.s
+
+ler-colunas.obj: ler-colunas.cpp.obj
+.PHONY : ler-colunas.obj
+
+# target to build an object file
+ler-colunas.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/ler-colunas.cpp.obj
+.PHONY : ler-colunas.cpp.obj
+
+ler-colunas.i: ler-colunas.cpp.i
+.PHONY : ler-colunas.i
+
+# target to preprocess a source file
+ler-colunas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/ler-colunas.cpp.i
+.PHONY : ler-colunas.cpp.i
+
+ler-colunas.s: ler-colunas.cpp.s
+.PHONY : ler-colunas.s
+
+# target to generate assembly for a file
+ler-colunas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/ler-colunas.cpp.s
+.PHONY : ler-colunas.cpp.s
+
+lista_dupla_ligada.obj: lista_dupla_ligada.cpp.obj
+.PHONY : lista_dupla_ligada.obj
+
+# target to build an object file
+lista_dupla_ligada.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj
+.PHONY : lista_dupla_ligada.cpp.obj
+
+lista_dupla_ligada.i: lista_dupla_ligada.cpp.i
+.PHONY : lista_dupla_ligada.i
+
+# target to preprocess a source file
+lista_dupla_ligada.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/lista_dupla_ligada.cpp.i
+.PHONY : lista_dupla_ligada.cpp.i
+
+lista_dupla_ligada.s: lista_dupla_ligada.cpp.s
+.PHONY : lista_dupla_ligada.s
+
+# target to generate assembly for a file
+lista_dupla_ligada.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/lista_dupla_ligada.cpp.s
+.PHONY : lista_dupla_ligada.cpp.s
+
+lista_functions.obj: lista_functions.cpp.obj
+.PHONY : lista_functions.obj
+
+# target to build an object file
+lista_functions.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/lista_functions.cpp.obj
+.PHONY : lista_functions.cpp.obj
+
+lista_functions.i: lista_functions.cpp.i
+.PHONY : lista_functions.i
+
+# target to preprocess a source file
+lista_functions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/lista_functions.cpp.i
+.PHONY : lista_functions.cpp.i
+
+lista_functions.s: lista_functions.cpp.s
+.PHONY : lista_functions.s
+
+# target to generate assembly for a file
+lista_functions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/lista_functions.cpp.s
+.PHONY : lista_functions.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\estrutura-de-dados.dir\build.make CMakeFiles/estrutura-de-dados.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -559,7 +631,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\estrutura-de-dados.dir\build.make CMakeFiles/estrutura-de-dados.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -567,7 +639,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\estrutura-de-dados.dir\build.make CMakeFiles/estrutura-de-dados.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -609,10 +681,19 @@ help:
 	@echo ... NightlySubmit
 	@echo ... NightlyTest
 	@echo ... NightlyUpdate
-	@echo ... estrutura-de-dados
+	@echo ... project
 	@echo ... csv_reader.obj
 	@echo ... csv_reader.i
 	@echo ... csv_reader.s
+	@echo ... ler-colunas.obj
+	@echo ... ler-colunas.i
+	@echo ... ler-colunas.s
+	@echo ... lista_dupla_ligada.obj
+	@echo ... lista_dupla_ligada.i
+	@echo ... lista_dupla_ligada.s
+	@echo ... lista_functions.obj
+	@echo ... lista_functions.i
+	@echo ... lista_functions.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

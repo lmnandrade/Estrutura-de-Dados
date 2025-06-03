@@ -46,7 +46,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake"
   "C:/Program Files/CMake/share/cmake-4.0/Templates/CPackConfig.cmake.in"
-  "C:/Users/rebek/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/CMakeLists.txt"
+  "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/CMakeLists.txt"
   "CMakeFiles/4.0.2/CMakeCCompiler.cmake"
   "CMakeFiles/4.0.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.0.2/CMakeRCCompiler.cmake"
@@ -69,7 +69,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/estrutura-de-dados.dir/DependInfo.cmake"
+  "CMakeFiles/project.dir/DependInfo.cmake"
   "CMakeFiles/Experimental.dir/DependInfo.cmake"
   "CMakeFiles/Nightly.dir/DependInfo.cmake"
   "CMakeFiles/Continuous.dir/DependInfo.cmake"

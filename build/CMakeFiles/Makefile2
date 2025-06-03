@@ -62,11 +62,11 @@ CMAKE_BINARY_DIR = C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutu
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/estrutura-de-dados.dir/all
+all: CMakeFiles/project.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/estrutura-de-dados.dir/codegen
+codegen: CMakeFiles/project.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -74,7 +74,7 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/estrutura-de-dados.dir/clean
+clean: CMakeFiles/project.dir/clean
 clean: CMakeFiles/Experimental.dir/clean
 clean: CMakeFiles/Nightly.dir/clean
 clean: CMakeFiles/Continuous.dir/clean
@@ -106,36 +106,36 @@ clean: CMakeFiles/ContinuousSubmit.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/estrutura-de-dados.dir
+# Target rules for target CMakeFiles/project.dir
 
 # All Build rule for target.
-CMakeFiles/estrutura-de-dados.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\estrutura-de-dados.dir\build.make CMakeFiles/estrutura-de-dados.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\estrutura-de-dados.dir\build.make CMakeFiles/estrutura-de-dados.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\build\CMakeFiles --progress-num=1,2,3 "Built target estrutura-de-dados"
-.PHONY : CMakeFiles/estrutura-de-dados.dir/all
+CMakeFiles/project.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\build\CMakeFiles --progress-num=1,2,3,4,5,6 "Built target project"
+.PHONY : CMakeFiles/project.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/estrutura-de-dados.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\build\CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/estrutura-de-dados.dir/all
+CMakeFiles/project.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\build\CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/project.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\build\CMakeFiles 0
-.PHONY : CMakeFiles/estrutura-de-dados.dir/rule
+.PHONY : CMakeFiles/project.dir/rule
 
 # Convenience name for target.
-estrutura-de-dados: CMakeFiles/estrutura-de-dados.dir/rule
-.PHONY : estrutura-de-dados
+project: CMakeFiles/project.dir/rule
+.PHONY : project
 
 # codegen rule for target.
-CMakeFiles/estrutura-de-dados.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\estrutura-de-dados.dir\build.make CMakeFiles/estrutura-de-dados.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\build\CMakeFiles --progress-num=1,2,3 "Finished codegen for target estrutura-de-dados"
-.PHONY : CMakeFiles/estrutura-de-dados.dir/codegen
+CMakeFiles/project.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\build\CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target project"
+.PHONY : CMakeFiles/project.dir/codegen
 
 # clean rule for target.
-CMakeFiles/estrutura-de-dados.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\estrutura-de-dados.dir\build.make CMakeFiles/estrutura-de-dados.dir/clean
-.PHONY : CMakeFiles/estrutura-de-dados.dir/clean
+CMakeFiles/project.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/clean
+.PHONY : CMakeFiles/project.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Experimental.dir

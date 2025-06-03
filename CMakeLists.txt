@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10.0)
-project(estrutura-de-dados VERSION 0.1.0 LANGUAGES C CXX)
+project(project VERSION 0.1.0 LANGUAGES C CXX)
 
-add_executable(estrutura-de-dados csv_reader.cpp main.cpp)
+add_executable(project csv_reader.cpp ler-colunas.cpp lista_dupla_ligada.cpp lista_functions.cpp main.cpp)
 
 include(CTest)
 enable_testing()
