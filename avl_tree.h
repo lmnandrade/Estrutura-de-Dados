@@ -1,70 +1,83 @@
 #ifndef AVL_TREE_H
 #define AVL_TREE_H
 
-#include "csv_reader.h"
-#include <vector>
+#include "csv_reader.h" // For EarthquakeRecord
 #include <string>
+#include <vector>
+#include <algorithm> // For std::max
+#include <iostream>  // For list_... methods
+#include <stdexcept> // For std::stod in list_by_min_magnitude
 
-// Estrutura para o nó da árvore AVL
-struct NoAVL {
+struct AVLNode {
     EarthquakeRecord record;
-    NoAVL* esquerda;
-    NoAVL* direita;
-    int altura;
+    AVLNode* left;
+    AVLNode* right;
+    int height;
+
+    AVLNode(const EarthquakeRecord& rec) : record(rec), left(nullptr), right(nullptr), height(1) {}
 };
 
-// Classe para a árvore AVL
-class ArvoreAVL {
+class AVLTree {
 private:
-    NoAVL* root;          // Raiz da árvore
-    int size;             // Número de nós na árvore
-    std::string comparisonKey;  // Chave usada para comparação (city, country, date, magnitude)
-    
-    // Métodos auxiliares
-    void limparArvore(NoAVL* no);
-    int altura(NoAVL* no);
-    int fatorBalanceamento(NoAVL* no);
-    void atualizarAltura(NoAVL* no);
-    NoAVL* rotacaoDireita(NoAVL* y);
-    NoAVL* rotacaoEsquerda(NoAVL* x);
-    std::string getComparisonValue(const EarthquakeRecord& record);
-    int compararRegistros(const EarthquakeRecord& a, const EarthquakeRecord& b);
-    NoAVL* inserirNo(NoAVL* no, const EarthquakeRecord& record);
-    NoAVL* noValorMinimo(NoAVL* no);
-    NoAVL* removerNo(NoAVL* no, const std::string& valor, const std::string& campo);
-    void buscarPorValorRecursivo(NoAVL* no, const std::string& valor, const std::string& campo, std::vector<EarthquakeRecord>& resultados, int& comparacoes);
-    void buscarPorCidadeEMagnitudeRecursivo(NoAVL* no, const std::string& cidade, const std::string& magnitudeMin, std::vector<EarthquakeRecord>& resultados, int& comparacoes);
-    void percorrerEmOrdem(NoAVL* no, std::vector<EarthquakeRecord>& registros);
-    void percorrerEmNivel(NoAVL* raiz, std::vector<EarthquakeRecord>& registros);
-    void imprimirArvoreRecursivo(NoAVL* no, int nivel);
-    bool verificarBalanceamentoRecursivo(NoAVL* no);
-    
+    AVLNode* root;
+    int node_count;
+
+    std::string get_composite_key(const EarthquakeRecord& rec) const;
+    std::string get_composite_key(const std::string& date, const std::string& time,
+                                  const std::string& city, const std::string& country) const;
+
+    int height(AVLNode* N);
+    int get_balance(AVLNode* N);
+
+    AVLNode* right_rotate(AVLNode* y);
+    AVLNode* left_rotate(AVLNode* x);
+
+    AVLNode* insert_node_recursive(AVLNode* node, const EarthquakeRecord& rec, const std::string& key);
+    AVLNode* remove_node_recursive(AVLNode* current_node, const std::string& key_to_delete);
+    AVLNode* find_min_value_node(AVLNode* node);
+
+    AVLNode* search_node_recursive(AVLNode* node, const std::string& key) const;
+
+    void get_all_records_recursive(AVLNode* node, std::vector<EarthquakeRecord>& result_vector) const; // Renamed from inorder_recursive
+    void destroy_recursive(AVLNode* node);
+
+    // Recursive helpers for search and list methods
+    void search_by_city_recursive(AVLNode* node, const std::string& city_name, std::vector<EarthquakeRecord>& results) const;
+    void search_by_magnitude_exact_recursive(AVLNode* node, const std::string& magnitude_value, std::vector<EarthquakeRecord>& results) const;
+    void search_by_date_recursive(AVLNode* node, const std::string& date_value, std::vector<EarthquakeRecord>& results) const;
+    void search_by_city_and_magnitude_recursive(AVLNode* node, const std::string& city_name, const std::string& magnitude_value, std::vector<EarthquakeRecord>& results) const;
+
+    void list_all_records_recursive(AVLNode* node, int& record_num) const;
+    void list_by_min_magnitude_recursive(AVLNode* node, double min_mag_val, int& record_num, int& found_count) const;
+    void list_by_year_recursive(AVLNode* node, const std::string& year_str, int& record_num, int& found_count) const;
+
+
 public:
-    // Construtor e Destrutor
-    ArvoreAVL();
-    ~ArvoreAVL();
-    // avl_tree.h
-    void definirChaveComparacao(const std::string& chave);
-    void carregarDoCSV(const std::vector<EarthquakeRecord>& registros);
-    // Operações básicas
-    void inserir(const EarthquakeRecord& record);
-    bool remover(const std::string& valor, const std::string& campo);
-    
-    // Operações de busca
-    std::vector<EarthquakeRecord> buscarPorCidade(const std::string& cidade);
-    std::vector<EarthquakeRecord> buscarPorMagnitudeMinima(const std::string& magnitudeMin);
-    std::vector<EarthquakeRecord> buscarPorData(const std::string& data);
-    std::vector<EarthquakeRecord> buscarPorCidadeEMagnitude(const std::string& cidade, const std::string& magnitudeMin);
-    
-    // Operações de listagem
-    void listarTodos();
-    void listarPorAno(const std::string& ano);
-    
-    // Métodos auxiliares
-    int getTamanho() const;
-    bool estaVazia() const;
-    void imprimirArvore();
-    bool estaBalanceada();
+    AVLTree();
+    ~AVLTree();
+
+    // --- Métodos da Interface Comum ---
+    void insert_record(const EarthquakeRecord& record);
+    bool remove_record(const std::string& date, const std::string& time,
+                       const std::string& city, const std::string& country);
+
+    std::vector<EarthquakeRecord> search_by_city(const std::string& city_name) const;
+    std::vector<EarthquakeRecord> search_by_magnitude_exact(const std::string& magnitude_value) const;
+    std::vector<EarthquakeRecord> search_by_date(const std::string& date_value) const;
+    std::vector<EarthquakeRecord> search_by_city_and_magnitude(const std::string& city_name, const std::string& magnitude_value) const;
+
+    void list_all_records() const;
+    void list_by_min_magnitude(const std::string& min_mag_str) const;
+    void list_by_year(const std::string& year_str) const;
+
+    std::vector<EarthquakeRecord> get_all_records() const; // Nome padronizado
+
+    // --- Métodos Específicos da AVLTree (ou auxiliares públicos se necessário) ---
+    const EarthquakeRecord* search_record_by_composite_key(const std::string& date, const std::string& time,
+                                          const std::string& city, const std::string& country) const; // Original search
+    bool is_empty() const;
+    int get_count() const;
+    void clear_tree();
 };
 
 #endif // AVL_TREE_H

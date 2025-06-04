@@ -155,19 +155,19 @@ CMakeFiles/project.dir/classification.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/project.dir/classification.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\classification.cpp -o CMakeFiles\project.dir\classification.cpp.s
 
-CMakeFiles/project.dir/operations_menu.cpp.obj: CMakeFiles/project.dir/flags.make
-CMakeFiles/project.dir/operations_menu.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/operations_menu.cpp
-CMakeFiles/project.dir/operations_menu.cpp.obj: CMakeFiles/project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/project.dir/operations_menu.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/project.dir/operations_menu.cpp.obj -MF CMakeFiles\project.dir\operations_menu.cpp.obj.d -o CMakeFiles\project.dir\operations_menu.cpp.obj -c C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\operations_menu.cpp
+CMakeFiles/project.dir/alerta.cpp.obj: CMakeFiles/project.dir/flags.make
+CMakeFiles/project.dir/alerta.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/alerta.cpp
+CMakeFiles/project.dir/alerta.cpp.obj: CMakeFiles/project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/project.dir/alerta.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/project.dir/alerta.cpp.obj -MF CMakeFiles\project.dir\alerta.cpp.obj.d -o CMakeFiles\project.dir\alerta.cpp.obj -c C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\alerta.cpp
 
-CMakeFiles/project.dir/operations_menu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/project.dir/operations_menu.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\operations_menu.cpp > CMakeFiles\project.dir\operations_menu.cpp.i
+CMakeFiles/project.dir/alerta.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/project.dir/alerta.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\alerta.cpp > CMakeFiles\project.dir\alerta.cpp.i
 
-CMakeFiles/project.dir/operations_menu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/project.dir/operations_menu.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\operations_menu.cpp -o CMakeFiles\project.dir\operations_menu.cpp.s
+CMakeFiles/project.dir/alerta.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/project.dir/alerta.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\alerta.cpp -o CMakeFiles\project.dir\alerta.cpp.s
 
 CMakeFiles/project.dir/benchmark.cpp.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/benchmark.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/benchmark.cpp
@@ -205,7 +205,7 @@ project_OBJECTS = \
 "CMakeFiles/project.dir/avl_tree.cpp.obj" \
 "CMakeFiles/project.dir/kd_tree.cpp.obj" \
 "CMakeFiles/project.dir/classification.cpp.obj" \
-"CMakeFiles/project.dir/operations_menu.cpp.obj" \
+"CMakeFiles/project.dir/alerta.cpp.obj" \
 "CMakeFiles/project.dir/benchmark.cpp.obj" \
 "CMakeFiles/project.dir/main.cpp.obj"
 
@@ -218,7 +218,7 @@ project.exe: CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj
 project.exe: CMakeFiles/project.dir/avl_tree.cpp.obj
 project.exe: CMakeFiles/project.dir/kd_tree.cpp.obj
 project.exe: CMakeFiles/project.dir/classification.cpp.obj
-project.exe: CMakeFiles/project.dir/operations_menu.cpp.obj
+project.exe: CMakeFiles/project.dir/alerta.cpp.obj
 project.exe: CMakeFiles/project.dir/benchmark.cpp.obj
 project.exe: CMakeFiles/project.dir/main.cpp.obj
 project.exe: CMakeFiles/project.dir/build.make

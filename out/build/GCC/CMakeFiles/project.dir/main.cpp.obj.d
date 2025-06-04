@@ -159,8 +159,43 @@ CMakeFiles/project.dir/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h \
  C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\csv_reader.h \
  C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.h \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\avl_tree.h \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\kd_tree.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/cmath \
+ C:/msys64/ucrt64/include/math.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/specfun.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/gamma.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/special_function_util.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/bessel_function.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/beta_function.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/ell_integral.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/exp_integral.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/hypergeometric.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/legendre_function.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/poly_hermite.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/queue \
+ C:/msys64/ucrt64/include/c++/14.2.0/deque \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_deque.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/deque.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_queue.h \
  C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\classification.h \
  C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\operations_menu.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/iomanip \
+ C:/msys64/ucrt64/include/c++/14.2.0/locale \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_facets_nonio.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/ctime \
+ C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/codecvt.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_conv.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/quoted_string.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/sstream \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/sstream.tcc \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\alerta.h \
  C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\benchmark.h \
  C:/msys64/ucrt64/include/c++/14.2.0/chrono \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/chrono.h \
@@ -168,10 +203,8 @@ CMakeFiles/project.dir/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/cstdint \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
  C:/msys64/ucrt64/include/stdint.h \
- C:/msys64/ucrt64/include/c++/14.2.0/ctime \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/parse_numbers.h \
  C:/msys64/ucrt64/include/c++/14.2.0/fstream \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/codecvt.h \
  C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
  C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/fstream.tcc

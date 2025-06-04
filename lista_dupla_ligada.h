@@ -43,5 +43,6 @@ public:
 
     // Retorna todos os registros (pode ser útil para a busca por nível de risco)
     std::vector<EarthquakeRecord> get_all_records_vector() const;
+    
 };
 #endif

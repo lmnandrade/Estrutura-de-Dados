@@ -522,6 +522,30 @@ ContinuousSubmit/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ContinuousSubmit.dir\build.make CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
+alerta.obj: alerta.cpp.obj
+.PHONY : alerta.obj
+
+# target to build an object file
+alerta.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/alerta.cpp.obj
+.PHONY : alerta.cpp.obj
+
+alerta.i: alerta.cpp.i
+.PHONY : alerta.i
+
+# target to preprocess a source file
+alerta.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/alerta.cpp.i
+.PHONY : alerta.cpp.i
+
+alerta.s: alerta.cpp.s
+.PHONY : alerta.s
+
+# target to generate assembly for a file
+alerta.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/alerta.cpp.s
+.PHONY : alerta.cpp.s
+
 avl_tree.obj: avl_tree.cpp.obj
 .PHONY : avl_tree.obj
 
@@ -714,30 +738,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-operations_menu.obj: operations_menu.cpp.obj
-.PHONY : operations_menu.obj
-
-# target to build an object file
-operations_menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/operations_menu.cpp.obj
-.PHONY : operations_menu.cpp.obj
-
-operations_menu.i: operations_menu.cpp.i
-.PHONY : operations_menu.i
-
-# target to preprocess a source file
-operations_menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/operations_menu.cpp.i
-.PHONY : operations_menu.cpp.i
-
-operations_menu.s: operations_menu.cpp.s
-.PHONY : operations_menu.s
-
-# target to generate assembly for a file
-operations_menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/operations_menu.cpp.s
-.PHONY : operations_menu.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -778,6 +778,9 @@ help:
 	@echo ... NightlyTest
 	@echo ... NightlyUpdate
 	@echo ... project
+	@echo ... alerta.obj
+	@echo ... alerta.i
+	@echo ... alerta.s
 	@echo ... avl_tree.obj
 	@echo ... avl_tree.i
 	@echo ... avl_tree.s
@@ -802,9 +805,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... operations_menu.obj
-	@echo ... operations_menu.i
-	@echo ... operations_menu.s
 .PHONY : help
 
 

@@ -147,6 +147,15 @@ CMakeFiles/project.dir/benchmark.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/istream \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/istream.tcc \
  C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.h \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\avl_tree.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/algorithm \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_algo.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/algorithmfwd.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_heap.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/uniform_int_dist.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_tempbuf.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h \
  C:/msys64/ucrt64/include/c++/14.2.0/chrono \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/chrono.h \
  C:/msys64/ucrt64/include/c++/14.2.0/ratio \
@@ -168,14 +177,6 @@ CMakeFiles/project.dir/benchmark.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_map.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_multimap.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/erase_if.h \
- C:/msys64/ucrt64/include/c++/14.2.0/algorithm \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_algo.h \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/algorithmfwd.h \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_heap.h \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/uniform_int_dist.h \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_tempbuf.h \
- C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
- C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h \
  C:/msys64/ucrt64/include/c++/14.2.0/random \
  C:/msys64/ucrt64/include/c++/14.2.0/cmath \
  C:/msys64/ucrt64/include/math.h \

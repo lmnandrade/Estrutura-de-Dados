@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/project.dir/alerta.cpp.obj"
+  "CMakeFiles/project.dir/alerta.cpp.obj.d"
   "CMakeFiles/project.dir/avl_tree.cpp.obj"
   "CMakeFiles/project.dir/avl_tree.cpp.obj.d"
   "CMakeFiles/project.dir/benchmark.cpp.obj"
@@ -15,8 +17,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj.d"
   "CMakeFiles/project.dir/main.cpp.obj"
   "CMakeFiles/project.dir/main.cpp.obj.d"
-  "CMakeFiles/project.dir/operations_menu.cpp.obj"
-  "CMakeFiles/project.dir/operations_menu.cpp.obj.d"
   "libproject.dll.a"
   "project.exe"
   "project.exe.manifest"
