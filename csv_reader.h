@@ -1,10 +1,13 @@
 #ifndef CSV_READER_H
 #define CSV_READER_H
 
-#include <vector>
 #include <string>
+#include <vector>
+#include <iostream> // Para std::cerr e std::cout
 
-// Estrutura para armazenar cada registro de terremoto
+// Estrutura para armazenar os dados de um registro de terremoto
+// Todos os campos são lidos como strings. A conversão para tipos numéricos
+// será feita posteriormente, conforme necessário.
 struct EarthquakeRecord {
     std::string date;
     std::string time;
@@ -14,19 +17,18 @@ struct EarthquakeRecord {
     std::string longitude;
     std::string magnitude;
     std::string depth;
-    std::string impactScore;
+    std::string impact_score;
+
+    // Construtor padrão (opcional, mas útil para garantir que as strings estejam vazias)
+    EarthquakeRecord() = default; // Usa o construtor padrão gerado pelo compilador
 };
 
-// Função para ler o arquivo CSV e retornar um vetor de registros
-std::vector<EarthquakeRecord> readEarthquakeCSV(const std::string& filename);
+// Função para ler o arquivo CSV e retornar um vetor de EarthquakeRecord
+// Retorna um vetor vazio se o arquivo não puder ser aberto ou se houver erros críticos.
+std::vector<EarthquakeRecord> read_earthquake_csv(const std::string& filename);
 
-// Função para exibir um registro
+// Função para exibir um único registro de terremoto de forma formatada
 void displayRecord(const EarthquakeRecord& record);
-
-// Função para exibir todos os registros
-void displayAllRecords(const std::vector<EarthquakeRecord>& records);
-
-// Função auxiliar para dividir uma string por um delimitador
-std::vector<std::string> splitString(const std::string& str, char delimiter);
+void save_earthquake_csv(const std::string& filename, const std::vector<EarthquakeRecord>& records);
 
 #endif // CSV_READER_H

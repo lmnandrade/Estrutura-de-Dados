@@ -1,6 +1,6 @@
-CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj: \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.cpp \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.h \
+CMakeFiles/project.dir/avl_tree.cpp.obj: \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\avl_tree.cpp \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\avl_tree.h \
  C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\csv_reader.h \
  C:/msys64/ucrt64/include/c++/14.2.0/string \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/requires_hosted.h \
@@ -157,4 +157,25 @@ CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_conv.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/quoted_string.h \
  C:/msys64/ucrt64/include/c++/14.2.0/sstream \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/sstream.tcc
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/sstream.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/algorithm \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_algo.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/algorithmfwd.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_heap.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/uniform_int_dist.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_tempbuf.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/chrono \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/chrono.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/ratio \
+ C:/msys64/ucrt64/include/c++/14.2.0/cstdint \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
+ C:/msys64/ucrt64/include/stdint.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/limits \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/parse_numbers.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/queue \
+ C:/msys64/ucrt64/include/c++/14.2.0/deque \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_deque.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/deque.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_queue.h

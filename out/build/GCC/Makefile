@@ -522,6 +522,78 @@ ContinuousSubmit/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ContinuousSubmit.dir\build.make CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
+avl_tree.obj: avl_tree.cpp.obj
+.PHONY : avl_tree.obj
+
+# target to build an object file
+avl_tree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/avl_tree.cpp.obj
+.PHONY : avl_tree.cpp.obj
+
+avl_tree.i: avl_tree.cpp.i
+.PHONY : avl_tree.i
+
+# target to preprocess a source file
+avl_tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/avl_tree.cpp.i
+.PHONY : avl_tree.cpp.i
+
+avl_tree.s: avl_tree.cpp.s
+.PHONY : avl_tree.s
+
+# target to generate assembly for a file
+avl_tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/avl_tree.cpp.s
+.PHONY : avl_tree.cpp.s
+
+benchmark.obj: benchmark.cpp.obj
+.PHONY : benchmark.obj
+
+# target to build an object file
+benchmark.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/benchmark.cpp.obj
+.PHONY : benchmark.cpp.obj
+
+benchmark.i: benchmark.cpp.i
+.PHONY : benchmark.i
+
+# target to preprocess a source file
+benchmark.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/benchmark.cpp.i
+.PHONY : benchmark.cpp.i
+
+benchmark.s: benchmark.cpp.s
+.PHONY : benchmark.s
+
+# target to generate assembly for a file
+benchmark.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/benchmark.cpp.s
+.PHONY : benchmark.cpp.s
+
+classification.obj: classification.cpp.obj
+.PHONY : classification.obj
+
+# target to build an object file
+classification.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/classification.cpp.obj
+.PHONY : classification.cpp.obj
+
+classification.i: classification.cpp.i
+.PHONY : classification.i
+
+# target to preprocess a source file
+classification.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/classification.cpp.i
+.PHONY : classification.cpp.i
+
+classification.s: classification.cpp.s
+.PHONY : classification.s
+
+# target to generate assembly for a file
+classification.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/classification.cpp.s
+.PHONY : classification.cpp.s
+
 csv_reader.obj: csv_reader.cpp.obj
 .PHONY : csv_reader.obj
 
@@ -545,6 +617,30 @@ csv_reader.s: csv_reader.cpp.s
 csv_reader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/csv_reader.cpp.s
 .PHONY : csv_reader.cpp.s
+
+kd_tree.obj: kd_tree.cpp.obj
+.PHONY : kd_tree.obj
+
+# target to build an object file
+kd_tree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/kd_tree.cpp.obj
+.PHONY : kd_tree.cpp.obj
+
+kd_tree.i: kd_tree.cpp.i
+.PHONY : kd_tree.i
+
+# target to preprocess a source file
+kd_tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/kd_tree.cpp.i
+.PHONY : kd_tree.cpp.i
+
+kd_tree.s: kd_tree.cpp.s
+.PHONY : kd_tree.s
+
+# target to generate assembly for a file
+kd_tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/kd_tree.cpp.s
+.PHONY : kd_tree.cpp.s
 
 ler-colunas.obj: ler-colunas.cpp.obj
 .PHONY : ler-colunas.obj
@@ -594,30 +690,6 @@ lista_dupla_ligada.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/lista_dupla_ligada.cpp.s
 .PHONY : lista_dupla_ligada.cpp.s
 
-lista_functions.obj: lista_functions.cpp.obj
-.PHONY : lista_functions.obj
-
-# target to build an object file
-lista_functions.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/lista_functions.cpp.obj
-.PHONY : lista_functions.cpp.obj
-
-lista_functions.i: lista_functions.cpp.i
-.PHONY : lista_functions.i
-
-# target to preprocess a source file
-lista_functions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/lista_functions.cpp.i
-.PHONY : lista_functions.cpp.i
-
-lista_functions.s: lista_functions.cpp.s
-.PHONY : lista_functions.s
-
-# target to generate assembly for a file
-lista_functions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/lista_functions.cpp.s
-.PHONY : lista_functions.cpp.s
-
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -641,6 +713,30 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+operations_menu.obj: operations_menu.cpp.obj
+.PHONY : operations_menu.obj
+
+# target to build an object file
+operations_menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/operations_menu.cpp.obj
+.PHONY : operations_menu.cpp.obj
+
+operations_menu.i: operations_menu.cpp.i
+.PHONY : operations_menu.i
+
+# target to preprocess a source file
+operations_menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/operations_menu.cpp.i
+.PHONY : operations_menu.cpp.i
+
+operations_menu.s: operations_menu.cpp.s
+.PHONY : operations_menu.s
+
+# target to generate assembly for a file
+operations_menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/operations_menu.cpp.s
+.PHONY : operations_menu.cpp.s
 
 # Help Target
 help:
@@ -682,21 +778,33 @@ help:
 	@echo ... NightlyTest
 	@echo ... NightlyUpdate
 	@echo ... project
+	@echo ... avl_tree.obj
+	@echo ... avl_tree.i
+	@echo ... avl_tree.s
+	@echo ... benchmark.obj
+	@echo ... benchmark.i
+	@echo ... benchmark.s
+	@echo ... classification.obj
+	@echo ... classification.i
+	@echo ... classification.s
 	@echo ... csv_reader.obj
 	@echo ... csv_reader.i
 	@echo ... csv_reader.s
+	@echo ... kd_tree.obj
+	@echo ... kd_tree.i
+	@echo ... kd_tree.s
 	@echo ... ler-colunas.obj
 	@echo ... ler-colunas.i
 	@echo ... ler-colunas.s
 	@echo ... lista_dupla_ligada.obj
 	@echo ... lista_dupla_ligada.i
 	@echo ... lista_dupla_ligada.s
-	@echo ... lista_functions.obj
-	@echo ... lista_functions.i
-	@echo ... lista_functions.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... operations_menu.obj
+	@echo ... operations_menu.i
+	@echo ... operations_menu.s
 .PHONY : help
 
 

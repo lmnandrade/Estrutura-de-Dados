@@ -1,6 +1,6 @@
-CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj: \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.cpp \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.h \
+CMakeFiles/project.dir/functions.cpp.obj: \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\functions.cpp \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\functions.h \
  C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\csv_reader.h \
  C:/msys64/ucrt64/include/c++/14.2.0/string \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/requires_hosted.h \
@@ -146,6 +146,9 @@ CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/ostream.tcc \
  C:/msys64/ucrt64/include/c++/14.2.0/istream \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/istream.tcc \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.h \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\avl_tree.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/limits \
  C:/msys64/ucrt64/include/c++/14.2.0/iomanip \
  C:/msys64/ucrt64/include/c++/14.2.0/locale \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_facets_nonio.h \

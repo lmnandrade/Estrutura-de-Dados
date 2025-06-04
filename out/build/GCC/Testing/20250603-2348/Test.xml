@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Site BuildName="Win32-mingw32-make"
-	BuildStamp="20250601-2033-Experimental"
+	BuildStamp="20250603-2348-Experimental"
 	Name="DESKTOP-N4AEGIB"
 	Generator="ctest-4.0.2"
 	CompilerName="C:/msys64/ucrt64/bin/g++.exe"
@@ -19,17 +19,17 @@
 	ProcessorCacheSize="-1"
 	NumberOfLogicalCPU="12"
 	NumberOfPhysicalCPU="10"
-	TotalVirtualMemory="24747"
+	TotalVirtualMemory="25284"
 	TotalPhysicalMemory="16068"
 	LogicalProcessorsPerPhysical="1"
 	ProcessorClockFrequency="2611"
 	>
 	<Testing>
-		<StartDateTime>Jun 02 23:56 Hora oficial do Brasil</StartDateTime>
-		<StartTestTime>1748919362</StartTestTime>
+		<StartDateTime>Jun 04 02:12 Hora oficial do Brasil</StartDateTime>
+		<StartTestTime>1749013958</StartTestTime>
 		<TestList/>
-		<EndDateTime>Jun 02 23:56 Hora oficial do Brasil</EndDateTime>
-		<EndTestTime>1748919362</EndTestTime>
+		<EndDateTime>Jun 04 02:12 Hora oficial do Brasil</EndDateTime>
+		<EndTestTime>1749013958</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

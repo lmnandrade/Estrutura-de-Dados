@@ -1,6 +1,6 @@
-CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj: \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.cpp \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.h \
+CMakeFiles/project.dir/classification.cpp.obj: \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\classification.cpp \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\classification.h \
  C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\csv_reader.h \
  C:/msys64/ucrt64/include/c++/14.2.0/string \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/requires_hosted.h \
@@ -146,6 +146,17 @@ CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/ostream.tcc \
  C:/msys64/ucrt64/include/c++/14.2.0/istream \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/istream.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/map \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/ext/aligned_buffer.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/node_handle.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_map.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_multimap.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/erase_if.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/numeric \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_numeric.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h \
  C:/msys64/ucrt64/include/c++/14.2.0/iomanip \
  C:/msys64/ucrt64/include/c++/14.2.0/locale \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_facets_nonio.h \

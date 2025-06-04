@@ -1,6 +1,6 @@
-CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj: \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.cpp \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.h \
+CMakeFiles/project.dir/operations_menu.cpp.obj: \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\operations_menu.cpp \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\operations_menu.h \
  C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\csv_reader.h \
  C:/msys64/ucrt64/include/c++/14.2.0/string \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/requires_hosted.h \
@@ -146,6 +146,16 @@ CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/ostream.tcc \
  C:/msys64/ucrt64/include/c++/14.2.0/istream \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/istream.tcc \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\lista_dupla_ligada.h \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\classification.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/map \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/ext/aligned_buffer.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/node_handle.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_map.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_multimap.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/erase_if.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/limits \
  C:/msys64/ucrt64/include/c++/14.2.0/iomanip \
  C:/msys64/ucrt64/include/c++/14.2.0/locale \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_facets_nonio.h \
@@ -157,4 +167,12 @@ CMakeFiles/project.dir/lista_dupla_ligada.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_conv.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/quoted_string.h \
  C:/msys64/ucrt64/include/c++/14.2.0/sstream \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/sstream.tcc
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/sstream.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/algorithm \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_algo.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/algorithmfwd.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_heap.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/uniform_int_dist.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_tempbuf.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h

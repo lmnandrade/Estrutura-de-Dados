@@ -1,156 +1,127 @@
-/*
 #include "csv_reader.h"
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <algorithm> // Para std::remove_if
+#include <fstream>   // Para std::ifstream
+#include <sstream>   // Para std::stringstream
+#include <stdexcept> // Para std::runtime_error
+#include <iomanip>   // Para std::setw (se quiser usar na displayRecord, mas vou fazer simples)
 
-// Função auxiliar para remover espaços em branco extras de uma string
-static std::string trim(const std::string& str) {
-    size_t first = str.find_first_not_of(" \t\r\n");
-    if (first == std::string::npos) return "";
-    size_t last = str.find_last_not_of(" \t\r\n");
-    return str.substr(first, (last - first + 1));
-}
-
-std::vector<Registro> lerCSV(const std::string& nomearqui) {
-    std::vector<Registro> registros;
-    std::ifstream file(nomearqui);
-
-    if (!file.is_open()) {
-        std::cerr << "Erro: Não foi possível abrir o arquivo '" << nomearqui << "'\n";
-        return registros;
-    }
-
-    std::string linha;
-    // Lê o cabeçalho
-    if (!std::getline(file, linha)) {
-        std::cerr << "Erro: Não foi possível ler o cabeçalho de '" << nomearqui << "'\n";
-        return registros;
-    }
-
-    // Lê cada linha do arquivo
-    int linha_num = 1;
-    while (std::getline(file, linha)) {
-        linha_num++;
-        if (linha.empty()) continue; // Pula linhas em branco
-
-        std::stringstream ss(linha);
-        Registro registro;
-
-        // Lê cada campo, respeitando a ordem do CSV
-        if (std::getline(ss, registro.date, ',') &&
-            std::getline(ss, registro.time, ',') &&
-            std::getline(ss, registro.city, ',') &&
-            std::getline(ss, registro.ctry, ',') &&
-            std::getline(ss, registro.lat, ',') &&
-            std::getline(ss, registro.lon, ',') &&
-            std::getline(ss, registro.mag, ',') &&
-            std::getline(ss, registro.depth, ',') &&
-            std::getline(ss, registro.impactScore)) {
-
-            // Remove espaços em branco extras dos campos
-            registro.date = trim(registro.date);
-            registro.time = trim(registro.time);
-            registro.city = trim(registro.city);
-            registro.ctry = trim(registro.ctry);
-            registro.lat = trim(registro.lat);
-            registro.lon = trim(registro.lon);
-            registro.mag = trim(registro.mag);
-            registro.depth = trim(registro.depth);
-            registro.impactScore = trim(registro.impactScore);
-
-            registros.push_back(registro);
-        } else {
-            std::cerr << "Aviso: Linha malformada ignorada (" << linha_num << "): " << linha << std::endl;
-        }
-    }
-
-    file.close();
-    return registros;
-} */
-
-#include "csv_reader.h"
-#include <iostream>
-#include <fstream>
-#include <sstream>
-
-// Função para dividir uma string por um delimitador
-std::vector<std::string> splitString(const std::string& str, char delimiter) {
-    std::vector<std::string> tokens;
-    std::string token;
-    std::istringstream tokenStream(str);
-    
-    while (std::getline(tokenStream, token, delimiter)) {
-        tokens.push_back(token);
-    }
-    
-    return tokens;
-}
-
-// Função para ler o arquivo CSV e retornar um vetor de registros
-std::vector<EarthquakeRecord> readEarthquakeCSV(const std::string& filename) {
+// Implementação da função para ler o arquivo CSV
+std::vector<EarthquakeRecord> read_earthquake_csv(const std::string& filename) {
     std::vector<EarthquakeRecord> records;
     std::ifstream file(filename);
-    
+
     if (!file.is_open()) {
-        std::cerr << "Erro ao abrir o arquivo: " << filename << std::endl;
-        return records;
+        std::cerr << "ERRO: Nao foi possivel abrir o arquivo: " << filename << std::endl;
+        return records; // Retorna vetor vazio
     }
-    
+
     std::string line;
-    
-    // Ler a primeira linha (cabeçalho) e descartá-la
-    std::getline(file, line);
-    
-    // Ler as linhas de dados
+    int line_number = 0;
+
+    // Pular a linha do cabeçalho
+    if (std::getline(file, line)) {
+        line_number++; // Contabiliza a linha do cabeçalho
+    } else {
+        std::cerr << "ERRO: Arquivo CSV vazio ou nao foi possivel ler o cabecalho." << std::endl;
+        file.close();
+        return records; // Retorna vetor vazio
+    }
+
     while (std::getline(file, line)) {
-        std::vector<std::string> fields = splitString(line, ',');
-        
-        // Verificar se a linha tem o número correto de campos
-        if (fields.size() >= 9) {
-            EarthquakeRecord record;
-            record.date = fields[0];
-            record.time = fields[1];
-            record.city = fields[2];
-            record.country = fields[3];
-            record.latitude = fields[4];
-            record.longitude = fields[5];
-            record.magnitude = fields[6];
-            record.depth = fields[7];
-            record.impactScore = fields[8];
+        line_number++;
+        std::stringstream ss(line);
+        std::string field;
+        EarthquakeRecord record;
+        // int field_index = 0; // Removido pois não é mais usado diretamente no tratamento de erro de conversão
+
+        try {
+            // 0: Date
+            if (std::getline(ss, field, ',')) record.date = field;
+            else throw std::runtime_error("Campo 'Date' ausente.");
+            // field_index++;
+
+            // 1: Time (UTC)
+            if (std::getline(ss, field, ',')) record.time = field;
+            else throw std::runtime_error("Campo 'Time (UTC)' ausente.");
+            // field_index++;
+
+            // 2: City
+            if (std::getline(ss, field, ',')) record.city = field;
+            else throw std::runtime_error("Campo 'City' ausente.");
+            // field_index++;
+            
+            // 3: Country
+            if (std::getline(ss, field, ',')) record.country = field;
+            else throw std::runtime_error("Campo 'Country' ausente.");
+            // field_index++;
+
+            // 4: Latitude (lido como string)
+            if (std::getline(ss, field, ',')) record.latitude = field;
+            else throw std::runtime_error("Campo 'Latitude' ausente.");
+            // field_index++;
+
+            // 5: Longitude (lido como string)
+            if (std::getline(ss, field, ',')) record.longitude = field;
+            else throw std::runtime_error("Campo 'Longitude' ausente.");
+            // field_index++;
+
+            // 6: Earthquake Magnitude (lido como string)
+            if (std::getline(ss, field, ',')) record.magnitude = field;
+            else throw std::runtime_error("Campo 'Earthquake Magnitude' ausente.");
+            // field_index++;
+
+            // 7: Depth (km) (lido como string)
+            if (std::getline(ss, field, ',')) record.depth = field;
+            else throw std::runtime_error("Campo 'Depth (km)' ausente.");
+            // field_index++;
+
+            // 8: Impact Score (lido como string)
+            // Este é o último campo, não precisa de ',' no final do getline
+            if (std::getline(ss, field)) { // Lê o resto da linha para o último campo
+                 // Remove espaços em branco no início/fim do campo, se houver (opcional, mas bom)
+                field.erase(0, field.find_first_not_of(" \t\n\r\f\v"));
+                field.erase(field.find_last_not_of(" \t\n\r\f\v") + 1);
+                record.impact_score = field;
+            } else throw std::runtime_error("Campo 'Impact Score' ausente.");
+            // field_index++;
             
             records.push_back(record);
-        } else {
-            std::cerr << "Linha com formato incorreto: " << line << std::endl;
+
+        } catch (const std::runtime_error& re) {
+            std::cerr << "AVISO: Erro de formato na linha " << line_number << ". Erro: " << re.what() 
+                      << ". Linha ignorada: " << line << std::endl;
+            // Pula este registro
         }
     }
-    
+
     file.close();
-    std::cout << "Total de registros lidos: " << records.size() << std::endl;
     return records;
 }
 
-// Função para exibir um registro
+// Implementação da função para exibir um único registro de terremoto
 void displayRecord(const EarthquakeRecord& record) {
-    std::cout << "Data: " << record.date << std::endl;
-    std::cout << "Hora (UTC): " << record.time << std::endl;
-    std::cout << "Cidade: " << record.city << std::endl;
-    std::cout << "País: " << record.country << std::endl;
-    std::cout << "Latitude: " << record.latitude << std::endl;
-    std::cout << "Longitude: " << record.longitude << std::endl;
-    std::cout << "Magnitude: " << record.magnitude << std::endl;
-    std::cout << "Profundidade (km): " << record.depth << std::endl;
-    std::cout << "Pontuação de Impacto: " << record.impactScore << std::endl;
-    std::cout << "------------------------" << std::endl;
+    // Saída simples, você pode formatar melhor com <iomanip> se desejar
+    std::cout << "  Data: " << record.date
+              << ", Hora UTC: " << record.time
+              << ", Cidade: " << record.city
+              << ", Pais: " << record.country
+              << ", Lat: " << record.latitude
+              << ", Lon: " << record.longitude
+              << ", Mag: " << record.magnitude
+              << ", Prof (km): " << record.depth
+              << ", Impact Score: " << record.impact_score << std::endl;
 }
-
-// Função para exibir todos os registros
-void displayAllRecords(const std::vector<EarthquakeRecord>& records) {
-    std::cout << "Total de registros: " << records.size() << std::endl;
-    
-    for (size_t i = 0; i < records.size(); i++) {
-        std::cout << "Registro #" << (i + 1) << std::endl;
-        displayRecord(records[i]);
+void save_earthquake_csv(const std::string& filename, const std::vector<EarthquakeRecord>& records) {
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "ERRO: Nao foi possivel abrir o arquivo para escrita: " << filename << std::endl;
+        return;
     }
+    // Escreve o cabeçalho
+    file << "Date,Time (UTC),City,Country,Latitude,Longitude,Earthquake Magnitude,Depth (km),Impact Score\n";
+    for (const auto& rec : records) {
+        file << rec.date << "," << rec.time << "," << rec.city << "," << rec.country << ","
+             << rec.latitude << "," << rec.longitude << "," << rec.magnitude << ","
+             << rec.depth << "," << rec.impact_score << "\n";
+    }
+    file.close();
 }
