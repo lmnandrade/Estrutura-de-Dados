@@ -786,6 +786,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+perfect_hash.obj: perfect_hash.cpp.obj
+.PHONY : perfect_hash.obj
+
+# target to build an object file
+perfect_hash.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/perfect_hash.cpp.obj
+.PHONY : perfect_hash.cpp.obj
+
+perfect_hash.i: perfect_hash.cpp.i
+.PHONY : perfect_hash.i
+
+# target to preprocess a source file
+perfect_hash.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/perfect_hash.cpp.i
+.PHONY : perfect_hash.cpp.i
+
+perfect_hash.s: perfect_hash.cpp.s
+.PHONY : perfect_hash.s
+
+# target to generate assembly for a file
+perfect_hash.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/perfect_hash.cpp.s
+.PHONY : perfect_hash.cpp.s
+
 skip_list.obj: skip_list.cpp.obj
 .PHONY : skip_list.obj
 
@@ -809,6 +833,30 @@ skip_list.s: skip_list.cpp.s
 skip_list.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/skip_list.cpp.s
 .PHONY : skip_list.cpp.s
+
+statistic.obj: statistic.cpp.obj
+.PHONY : statistic.obj
+
+# target to build an object file
+statistic.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/statistic.cpp.obj
+.PHONY : statistic.cpp.obj
+
+statistic.i: statistic.cpp.i
+.PHONY : statistic.i
+
+# target to preprocess a source file
+statistic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/statistic.cpp.i
+.PHONY : statistic.cpp.i
+
+statistic.s: statistic.cpp.s
+.PHONY : statistic.s
+
+# target to generate assembly for a file
+statistic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/statistic.cpp.s
+.PHONY : statistic.cpp.s
 
 # Help Target
 help:
@@ -883,9 +931,15 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... perfect_hash.obj
+	@echo ... perfect_hash.i
+	@echo ... perfect_hash.s
 	@echo ... skip_list.obj
 	@echo ... skip_list.i
 	@echo ... skip_list.s
+	@echo ... statistic.obj
+	@echo ... statistic.i
+	@echo ... statistic.s
 .PHONY : help
 
 

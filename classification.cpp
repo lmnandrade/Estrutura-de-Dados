@@ -19,40 +19,6 @@ namespace { // Usando namespace anônimo para escopo local ao arquivo
 
 // Função auxiliar para tentar converter string para double
 // Retorna true se sucesso, false caso contrário. O valor é passado por referência.
-bool try_stod_custom(const std::string& s, double& out_val, const std::string& field_name, const std::string& country, const std::string& date) {
-    if (s.empty()) {
-        // std::cerr << "AVISO (Conversao): Campo '" << field_name << "' vazio para o pais " << country
-        //           << " no registro com data " << date << ". Nao sera contabilizado." << std::endl;
-        return false; // Não tentar converter string vazia
-    }
-    try {
-        size_t processed_chars;
-        out_val = std::stod(s, &processed_chars);
-        // Verifica se toda a string foi consumida, ou se há caracteres extras não numéricos
-        if (processed_chars != s.length()) {
-            // Permite espaços em branco no final, que são comuns
-            for (size_t i = processed_chars; i < s.length(); ++i) {
-                if (!std::isspace(static_cast<unsigned char>(s[i]))) {
-                     std::cerr << "AVISO (Conversao): Caracteres extras no campo '" << field_name << "': '" << s
-                               << "' para o pais " << country << " no registro com data " << date 
-                               << ". Valor lido: " << out_val << ". Restante: '" << s.substr(processed_chars) << "'" << std::endl;
-                    // Decide se considera o valor parcial ou falha. Aqui, vamos considerar o valor parcial.
-                    // Para falhar, retorne false aqui.
-                }
-            }
-        }
-        return true;
-    } catch (const std::invalid_argument& ia) {
-        std::cerr << "AVISO (Conversao): Argumento invalido para '" << field_name << "': '" << s 
-                  << "' para o pais " << country << " no registro com data " << date 
-                  << ". Erro: " << ia.what() << ". Nao sera contabilizado." << std::endl;
-    } catch (const std::out_of_range& oor) {
-        std::cerr << "AVISO (Conversao): Valor fora do range para '" << field_name << "': '" << s 
-                  << "' para o pais " << country << " no registro com data " << date 
-                  << ". Erro: " << oor.what() << ". Nao sera contabilizado." << std::endl;
-    }
-    return false;
-}
 
 
 std::map<std::string, CountryRiskProfile> classify_countries_by_risk(
@@ -79,16 +45,6 @@ std::map<std::string, CountryRiskProfile> classify_countries_by_risk(
 
         aggregated_data_map[country_key].total_earthquakes++;
         
-        double magnitude_val;
-        if (try_stod_custom(record.magnitude, magnitude_val, "Magnitude", country_key, record.date)) {
-            aggregated_data_map[country_key].magnitudes.push_back(magnitude_val);
-        }
-
-        double impact_score_val;
-        // Impact Score: critérios são inteiros, mas pode ser lido como double para média.
-        if (try_stod_custom(record.impact_score, impact_score_val, "Impact Score", country_key, record.date)) { 
-            aggregated_data_map[country_key].impact_scores.push_back(impact_score_val);
-        }
     }
 
     std::map<std::string, CountryRiskProfile> risk_profiles;

@@ -6,7 +6,6 @@
 #include <iomanip>  // Para std::setw, std::fixed, std::setprecision
 #include <algorithm>
 
-// Nossos Headers
 #include "csv_reader.h"         // Para EarthquakeRecord, read_earthquake_csv, displayRecord
 #include "classification.h"     // Para CountryRiskProfile, classify_countries_by_risk
 #include "operations_menu.h"    // Para menu_monitor_terremotos
@@ -15,10 +14,11 @@
 #include "hash_table.h"
 #include "kd_tree.h"
 #include "skip_list.h"
+#include "perfect_hash.h"       
 #include "alerta.h"
 #include "cadastro.h"
 #include "benchmark.h"
-
+#include "statistic.h"
 
 int main() {
     const std::string csv_filepath = "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/earthquake_dataset.csv";
@@ -54,9 +54,8 @@ int main() {
         std::cout << "3. Calculos Estatisticos sobre os Dados" << std::endl;
         std::cout << "4. Filtragem e Ordenacao dos Dados para Analise" << std::endl;
         std::cout << "5. Previsao de Tendencias de Terremotos" << std::endl;
-        std::cout << "6. Instrucoes para Benchmark (Docker)" << std::endl;
-        std::cout << "7. Cadastro para Alertas de Terremoto" << std::endl;
-        std::cout << "8. Executar Benchmarks" << std::endl;
+        std::cout << "6. Cadastro para Alertas de Terremoto" << std::endl;
+        std::cout << "7. Executar Benchmarks" << std::endl;
         std::cout << "0. Sair do Programa" << std::endl;
         std::cout << "Sua escolha: ";
 
@@ -78,6 +77,7 @@ int main() {
                 std::cout << "3. Tabela Hash" << std::endl;
                 std::cout << "4. KD-Tree" << std::endl;
                 std::cout << "5. Skip-List" << std::endl;
+                std::cout << "6. Perfect Hashing" << std::endl;
                 std::cout << "0. Voltar ao Menu Principal" << std::endl;
                 std::cout << "Escolha a estrutura: ";
 
@@ -132,6 +132,13 @@ int main() {
                     std::cout << "Skip-List populada com " << sl.get_count() << " registros." << std::endl;
                     menu_monitor_terremotos(sl, "Skip-List", country_risks, all_records);
                 }
+                else if (ds_choice == 6) {
+                std::cout << "Construindo Perfect Hashing..." << std::endl;
+                PerfectHashTable pht(all_records.size());
+                pht.build_table(all_records);
+                std::cout << "Perfect Hashing construida com " << pht.get_count() << " registros." << std::endl;
+                menu_monitor_terremotos(pht, "Perfect Hashing", country_risks, all_records);
+    }
                 else if (ds_choice == 0) {
                     // Voltar
                 } else {
@@ -143,10 +150,7 @@ int main() {
                 alerta_terremoto(country_risks, registered_emails, all_records);
                 break;
             case 3:
-                // show_statistics_menu(all_records, country_risks); // Comentado
-                std::cout << "\nFuncionalidade 'Calculos Estatisticos' ainda nao implementada." << std::endl;
-                std::cout << "Pressione Enter para continuar...";
-                // std::cin.get(); // Removido pois o ignore no loop principal cuida disso
+                menu_estatisticas(all_records);
                 break;
             case 4:
                 // show_filtering_menu(all_records, country_risks); // Comentado
@@ -161,15 +165,9 @@ int main() {
                 // std::cin.get();
                 break;
             case 6:
-                // show_info_benchmark_menu(); // Comentado
-                std::cout << "\nFuncionalidade 'Instrucoes para Benchmark (Docker)' ainda nao implementada." << std::endl;
-                std::cout << "Pressione Enter para continuar...";
-                // std::cin.get();
-                break;
-            case 7:
                 manage_email_cadastro(registered_emails);
                 break;
-            case 8: {
+            case 7: {
                 if (all_records.empty()) {
                     std::cout << "Nao e possivel executar benchmarks: o dataset principal esta vazio." << std::endl;
                     std::cout << "Pressione Enter para continuar...";

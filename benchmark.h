@@ -20,6 +20,9 @@
 #include <utility>
 #include <type_traits>
 
+// Forward declaration for EarthquakeRecord
+struct EarthquakeRecord;
+
 // Estrutura para armazenar os resultados de um único teste de benchmark
 struct BenchmarkResult {
     std::string data_structure_name;
@@ -157,8 +160,8 @@ long long BenchmarkRunner::measure_search_specific(const Structure& ds, const st
             }
         } else if constexpr (std::is_same_v<Structure, KDTree>) {
             double lat, lon;
-            if (KDTreeHelpers::try_string_to_double(record.latitude, lat) &&
-                KDTreeHelpers::try_string_to_double(record.longitude, lon)) {
+            if (KDTreeHelpers::try_string_to_double(record.latitude, lat, false, "") &&
+                KDTreeHelpers::try_string_to_double(record.longitude, lon, false, "")) {
                 if (ds.search_nearest_neighbor(lat, lon) != nullptr) {
                     found_count++;
                 }
@@ -205,8 +208,8 @@ long long BenchmarkRunner::measure_search_random(const Structure& ds, int num_se
             }
         } else if constexpr (std::is_same_v<Structure, KDTree>) {
             double lat, lon;
-            if (KDTreeHelpers::try_string_to_double(record_to_find.latitude, lat) &&
-                KDTreeHelpers::try_string_to_double(record_to_find.longitude, lon)) {
+            if (KDTreeHelpers::try_string_to_double(record_to_find.latitude, lat, false, "") &&
+                KDTreeHelpers::try_string_to_double(record_to_find.longitude, lon, false, "")) {
                 if (ds.search_nearest_neighbor(lat, lon) != nullptr) {
                     found_count++;
                 }

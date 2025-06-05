@@ -8,6 +8,7 @@
 #include "kd_tree.h"
 #include "hash_table.h"
 #include "skip_list.h"
+#include "perfect_hash.h"
 #include <vector>
 #include <string>
 #include <map>
@@ -101,8 +102,12 @@ inline std::vector<EarthquakeRecord> get_all_records_from_structure_impl(const H
 inline std::vector<EarthquakeRecord> get_all_records_from_structure_impl(const SkipList& ds) {
     return ds.get_all_records_vector();
 }
+
+inline std::vector<EarthquakeRecord> get_all_records_from_structure_impl(const PerfectHashTable& ds) {
+    return ds.get_all_records_vector();
+}
 template <typename DS>
-std::vector<EarthquakeRecord> get_all_records_from_structure(const DS& data_structure) {
+inline std::vector<EarthquakeRecord> get_all_records_from_structure(const DS& data_structure) {
     return get_all_records_from_structure_impl(data_structure);
 }
 
@@ -259,16 +264,15 @@ void menu_monitor_terremotos(
                 break;
             }
             case 3: { // Buscar Registro (Por Atributos)
-                // (Código original do case 3 mantido, incluindo can_remove_from_search = true; no final se resultados)
                 last_search_results.clear();
                 int search_choice_monitor;
                 std::cout << "\n--- Buscar Registro (Por Atributos) em " << structure_name << " ---" << std::endl;
-                std::cout << "1. Por Cidade" << std::endl;
+                std::cout << "1. Por Pais" << std::endl; // MODIFICADO AQUI
                 std::cout << "2. Por Magnitude (Exata)" << std::endl;
                 std::cout << "3. Por Data (AAAA-MM-DD)" << std::endl;
                 std::cout << "4. Por Nivel de Risco do Pais" << std::endl;
                 std::cout << "5. Por Cidade E Magnitude" << std::endl;
-                if (std::is_same<DataStructureType, HashTable>::value || std::is_same<DataStructureType, SkipList>::value) {
+                if (std::is_same<DataStructureType, HashTable>::value || std::is_same<DataStructureType, SkipList>::value ||  std::is_same<DataStructureType, PerfectHashTable>::value) {
                     std::cout << "6. Por Chave Primaria Exata (Data_Hora_Cidade)" << std::endl;
                 }
                 std::cout << "0. Voltar" << std::endl;
@@ -281,18 +285,30 @@ void menu_monitor_terremotos(
                 }
                 OpsMenuHelpers::clear_input_buffer_ops();
 
-                if ((std::is_same<DataStructureType, HashTable>::value || std::is_same<DataStructureType, SkipList>::value) && search_choice_monitor == 6) {
+                               // ... (ainda dentro do case 3: // Buscar Registro (Por Atributos))
+                // ... (após ler search_choice_monitor)
+
+                // MODIFICADO AQUI para incluir PerfectHashTable na lógica da opção 6:
+                if ((std::is_same<DataStructureType, HashTable>::value ||
+                     std::is_same<DataStructureType, SkipList>::value ||
+                     std::is_same<DataStructureType, PerfectHashTable>::value) // <<< Condição externa modificada
+                    && search_choice_monitor == 6) {
                     std::string date_key = OpsMenuHelpers::get_line_input_ops("Data (AAAA-MM-DD) da chave: ");
                     std::string time_key = OpsMenuHelpers::get_line_input_ops("Hora (UTC HH:MM:SS) da chave: ");
                     std::string city_key = OpsMenuHelpers::get_line_input_ops("Cidade da chave: ");
                     EarthquakeRecord* found_rec = nullptr;
+
                     if (std::is_same<DataStructureType, HashTable>::value) {
                         auto& ht_ref = reinterpret_cast<HashTable&>(data_structure);
                         found_rec = const_cast<EarthquakeRecord*>(ht_ref.search_record(date_key, time_key, city_key));
-                    } else { 
+                    } else if (std::is_same<DataStructureType, SkipList>::value) { // <<< else if explícito
                         auto& sl_ref = reinterpret_cast<SkipList&>(data_structure);
                         found_rec = const_cast<EarthquakeRecord*>(sl_ref.search_record(date_key, time_key, city_key));
+                    } else if (std::is_same<DataStructureType, PerfectHashTable>::value) { // <<< NOVO ELSE IF
+                        auto& pht_ref = reinterpret_cast<PerfectHashTable&>(data_structure);
+                        found_rec = const_cast<EarthquakeRecord*>(pht_ref.search_record(date_key, time_key, city_key));
                     }
+                    // O 'else' para HashTable/SkipList não é mais necessário se você usar 'else if' para cada tipo
                     if (found_rec) {
                         last_search_results.push_back(*found_rec);
                     }
@@ -303,10 +319,14 @@ void menu_monitor_terremotos(
                     bool valid_search_option = true;
 
                     switch (search_choice_monitor) {
-                        case 1: {
-                            std::string city_s = OpsMenuHelpers::get_line_input_ops("Digite a cidade: ");
-                            search_description = "Cidade: " + city_s;
-                            for(const auto& rec : records_for_search) if(rec.city == city_s) last_search_results.push_back(rec);
+                        case 1: { // MODIFICADO AQUI
+                            std::string country_s = OpsMenuHelpers::get_line_input_ops("Digite o pais: ");
+                            search_description = "Pais: " + country_s;
+                            for(const auto& rec : records_for_search) {
+                                if(rec.country == country_s) {
+                                    last_search_results.push_back(rec);
+                                }
+                            }
                             break;
                         }
                         case 2: {
@@ -374,9 +394,6 @@ void menu_monitor_terremotos(
             }
             case 4: { // Listar Registros
                 // (Código original do case 4 mantido)
-                // Esta seção assume que data_structure TEM os métodos list_all_records, etc.
-                // Se não, causará erro de compilação para essa DataStructureType.
-                // "Consertar" isso sem alterar a função significaria que as estruturas DEVEM ter esses métodos.
                 int list_choice_monitor;
                 std::cout << "\n--- Listar Registros em " << structure_name << " ---" << std::endl;
                 std::cout << "1. Listar Todos" << std::endl;

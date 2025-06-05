@@ -197,10 +197,24 @@ CMakeFiles/project.dir/classification.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/project.dir/classification.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\classification.cpp -o CMakeFiles\project.dir\classification.cpp.s
 
+CMakeFiles/project.dir/perfect_hash.cpp.obj: CMakeFiles/project.dir/flags.make
+CMakeFiles/project.dir/perfect_hash.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/perfect_hash.cpp
+CMakeFiles/project.dir/perfect_hash.cpp.obj: CMakeFiles/project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/project.dir/perfect_hash.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/project.dir/perfect_hash.cpp.obj -MF CMakeFiles\project.dir\perfect_hash.cpp.obj.d -o CMakeFiles\project.dir\perfect_hash.cpp.obj -c C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\perfect_hash.cpp
+
+CMakeFiles/project.dir/perfect_hash.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/project.dir/perfect_hash.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\perfect_hash.cpp > CMakeFiles\project.dir\perfect_hash.cpp.i
+
+CMakeFiles/project.dir/perfect_hash.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/project.dir/perfect_hash.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\perfect_hash.cpp -o CMakeFiles\project.dir\perfect_hash.cpp.s
+
 CMakeFiles/project.dir/alerta.cpp.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/alerta.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/alerta.cpp
 CMakeFiles/project.dir/alerta.cpp.obj: CMakeFiles/project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/project.dir/alerta.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/project.dir/alerta.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/project.dir/alerta.cpp.obj -MF CMakeFiles\project.dir\alerta.cpp.obj.d -o CMakeFiles\project.dir\alerta.cpp.obj -c C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\alerta.cpp
 
 CMakeFiles/project.dir/alerta.cpp.i: cmake_force
@@ -214,7 +228,7 @@ CMakeFiles/project.dir/alerta.cpp.s: cmake_force
 CMakeFiles/project.dir/benchmark.cpp.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/benchmark.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/benchmark.cpp
 CMakeFiles/project.dir/benchmark.cpp.obj: CMakeFiles/project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/project.dir/benchmark.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/project.dir/benchmark.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/project.dir/benchmark.cpp.obj -MF CMakeFiles\project.dir\benchmark.cpp.obj.d -o CMakeFiles\project.dir\benchmark.cpp.obj -c C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\benchmark.cpp
 
 CMakeFiles/project.dir/benchmark.cpp.i: cmake_force
@@ -228,7 +242,7 @@ CMakeFiles/project.dir/benchmark.cpp.s: cmake_force
 CMakeFiles/project.dir/main.cpp.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/main.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/main.cpp
 CMakeFiles/project.dir/main.cpp.obj: CMakeFiles/project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/project.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/project.dir/main.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/project.dir/main.cpp.obj -MF CMakeFiles\project.dir\main.cpp.obj.d -o CMakeFiles\project.dir\main.cpp.obj -c C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\main.cpp
 
 CMakeFiles/project.dir/main.cpp.i: cmake_force
@@ -238,6 +252,20 @@ CMakeFiles/project.dir/main.cpp.i: cmake_force
 CMakeFiles/project.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/project.dir/main.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\main.cpp -o CMakeFiles\project.dir\main.cpp.s
+
+CMakeFiles/project.dir/statistic.cpp.obj: CMakeFiles/project.dir/flags.make
+CMakeFiles/project.dir/statistic.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/statistic.cpp
+CMakeFiles/project.dir/statistic.cpp.obj: CMakeFiles/project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/project.dir/statistic.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/project.dir/statistic.cpp.obj -MF CMakeFiles\project.dir\statistic.cpp.obj.d -o CMakeFiles\project.dir\statistic.cpp.obj -c C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\statistic.cpp
+
+CMakeFiles/project.dir/statistic.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/project.dir/statistic.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\statistic.cpp > CMakeFiles\project.dir\statistic.cpp.i
+
+CMakeFiles/project.dir/statistic.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/project.dir/statistic.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\statistic.cpp -o CMakeFiles\project.dir\statistic.cpp.s
 
 # Object files for target project
 project_OBJECTS = \
@@ -250,9 +278,11 @@ project_OBJECTS = \
 "CMakeFiles/project.dir/kd_tree.cpp.obj" \
 "CMakeFiles/project.dir/skip_list.cpp.obj" \
 "CMakeFiles/project.dir/classification.cpp.obj" \
+"CMakeFiles/project.dir/perfect_hash.cpp.obj" \
 "CMakeFiles/project.dir/alerta.cpp.obj" \
 "CMakeFiles/project.dir/benchmark.cpp.obj" \
-"CMakeFiles/project.dir/main.cpp.obj"
+"CMakeFiles/project.dir/main.cpp.obj" \
+"CMakeFiles/project.dir/statistic.cpp.obj"
 
 # External object files for target project
 project_EXTERNAL_OBJECTS =
@@ -266,14 +296,16 @@ project.exe: CMakeFiles/project.dir/avl_tree.cpp.obj
 project.exe: CMakeFiles/project.dir/kd_tree.cpp.obj
 project.exe: CMakeFiles/project.dir/skip_list.cpp.obj
 project.exe: CMakeFiles/project.dir/classification.cpp.obj
+project.exe: CMakeFiles/project.dir/perfect_hash.cpp.obj
 project.exe: CMakeFiles/project.dir/alerta.cpp.obj
 project.exe: CMakeFiles/project.dir/benchmark.cpp.obj
 project.exe: CMakeFiles/project.dir/main.cpp.obj
+project.exe: CMakeFiles/project.dir/statistic.cpp.obj
 project.exe: CMakeFiles/project.dir/build.make
 project.exe: CMakeFiles/project.dir/linkLibs.rsp
 project.exe: CMakeFiles/project.dir/objects1.rsp
 project.exe: CMakeFiles/project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable project.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\project.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
