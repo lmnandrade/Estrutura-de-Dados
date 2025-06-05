@@ -6,6 +6,7 @@
 #include <vector>
 #include <map>
 
+
 // Estrutura para armazenar os detalhes da classificação de um país
 struct CountryRiskProfile {
     std::string country_name;

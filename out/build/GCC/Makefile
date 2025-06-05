@@ -594,6 +594,30 @@ benchmark.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/benchmark.cpp.s
 .PHONY : benchmark.cpp.s
 
+cadastro.obj: cadastro.cpp.obj
+.PHONY : cadastro.obj
+
+# target to build an object file
+cadastro.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/cadastro.cpp.obj
+.PHONY : cadastro.cpp.obj
+
+cadastro.i: cadastro.cpp.i
+.PHONY : cadastro.i
+
+# target to preprocess a source file
+cadastro.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/cadastro.cpp.i
+.PHONY : cadastro.cpp.i
+
+cadastro.s: cadastro.cpp.s
+.PHONY : cadastro.s
+
+# target to generate assembly for a file
+cadastro.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/cadastro.cpp.s
+.PHONY : cadastro.cpp.s
+
 classification.obj: classification.cpp.obj
 .PHONY : classification.obj
 
@@ -641,6 +665,30 @@ csv_reader.s: csv_reader.cpp.s
 csv_reader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/csv_reader.cpp.s
 .PHONY : csv_reader.cpp.s
+
+hash_table.obj: hash_table.cpp.obj
+.PHONY : hash_table.obj
+
+# target to build an object file
+hash_table.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/hash_table.cpp.obj
+.PHONY : hash_table.cpp.obj
+
+hash_table.i: hash_table.cpp.i
+.PHONY : hash_table.i
+
+# target to preprocess a source file
+hash_table.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/hash_table.cpp.i
+.PHONY : hash_table.cpp.i
+
+hash_table.s: hash_table.cpp.s
+.PHONY : hash_table.s
+
+# target to generate assembly for a file
+hash_table.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/hash_table.cpp.s
+.PHONY : hash_table.cpp.s
 
 kd_tree.obj: kd_tree.cpp.obj
 .PHONY : kd_tree.obj
@@ -738,6 +786,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+skip_list.obj: skip_list.cpp.obj
+.PHONY : skip_list.obj
+
+# target to build an object file
+skip_list.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/skip_list.cpp.obj
+.PHONY : skip_list.cpp.obj
+
+skip_list.i: skip_list.cpp.i
+.PHONY : skip_list.i
+
+# target to preprocess a source file
+skip_list.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/skip_list.cpp.i
+.PHONY : skip_list.cpp.i
+
+skip_list.s: skip_list.cpp.s
+.PHONY : skip_list.s
+
+# target to generate assembly for a file
+skip_list.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/skip_list.cpp.s
+.PHONY : skip_list.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -787,12 +859,18 @@ help:
 	@echo ... benchmark.obj
 	@echo ... benchmark.i
 	@echo ... benchmark.s
+	@echo ... cadastro.obj
+	@echo ... cadastro.i
+	@echo ... cadastro.s
 	@echo ... classification.obj
 	@echo ... classification.i
 	@echo ... classification.s
 	@echo ... csv_reader.obj
 	@echo ... csv_reader.i
 	@echo ... csv_reader.s
+	@echo ... hash_table.obj
+	@echo ... hash_table.i
+	@echo ... hash_table.s
 	@echo ... kd_tree.obj
 	@echo ... kd_tree.i
 	@echo ... kd_tree.s
@@ -805,6 +883,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... skip_list.obj
+	@echo ... skip_list.i
+	@echo ... skip_list.s
 .PHONY : help
 
 

@@ -1,6 +1,6 @@
-CMakeFiles/project.dir/kd_tree.cpp.obj: \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\kd_tree.cpp \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\kd_tree.h \
+CMakeFiles/project.dir/cadastro.cpp.obj: \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\cadastro.cpp \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\cadastro.h \
  C:/msys64/ucrt64/include/c++/14.2.0/string \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -102,12 +102,6 @@ CMakeFiles/project.dir/kd_tree.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_vector.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_bvector.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/vector.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/queue \
- C:/msys64/ucrt64/include/c++/14.2.0/deque \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_deque.h \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/deque.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_heap.h \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_queue.h \
  C:/msys64/ucrt64/include/c++/14.2.0/iostream \
  C:/msys64/ucrt64/include/c++/14.2.0/ostream \
  C:/msys64/ucrt64/include/c++/14.2.0/ios \
@@ -151,38 +145,10 @@ CMakeFiles/project.dir/kd_tree.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/ostream.tcc \
  C:/msys64/ucrt64/include/c++/14.2.0/istream \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/istream.tcc \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\csv_reader.h \
- C:/msys64/ucrt64/include/c++/14.2.0/iomanip \
- C:/msys64/ucrt64/include/c++/14.2.0/locale \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_facets_nonio.h \
- C:/msys64/ucrt64/include/c++/14.2.0/ctime \
- C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
- C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/codecvt.h \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_conv.h \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/quoted_string.h \
- C:/msys64/ucrt64/include/c++/14.2.0/sstream \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/sstream.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/cmath \
- C:/msys64/ucrt64/include/math.h \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/specfun.h \
- C:/msys64/ucrt64/include/c++/14.2.0/limits \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/gamma.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/special_function_util.h \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/bessel_function.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/beta_function.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/ell_integral.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/exp_integral.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/hypergeometric.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/legendre_function.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/poly_hermite.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
  C:/msys64/ucrt64/include/c++/14.2.0/algorithm \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_algo.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/algorithmfwd.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_heap.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/uniform_int_dist.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_tempbuf.h \
  C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \

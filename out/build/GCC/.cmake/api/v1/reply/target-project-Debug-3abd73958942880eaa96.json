@@ -52,7 +52,10 @@
 				5,
 				6,
 				7,
-				8
+				8,
+				9,
+				10,
+				11
 			]
 		}
 	],
@@ -93,7 +96,10 @@
 				5,
 				6,
 				7,
-				8
+				8,
+				9,
+				10,
+				11
 			]
 		}
 	],
@@ -108,7 +114,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "hash_table.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "ler-colunas.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cadastro.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -127,6 +145,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "kd_tree.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "skip_list.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
