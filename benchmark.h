@@ -59,7 +59,6 @@ public:
     
     void save_results_to_csv(const std::string& filepath) const;
 
-private:
     std::vector<EarthquakeRecord> all_data_;
     std::string benchmark_name_;
     std::map<std::string, BenchmarkMetrics> results_;

@@ -156,22 +156,41 @@ void BenchmarkRunner::run_standard_benchmarks(
     RestrictionConfig no_restriction_config; 
 
     std::cout << "Benchmarking DoublyLinkedList (Padrao)..." << std::endl;
-    results_["DoublyLinkedList"] = run_benchmark_for_structure<DoublyLinkedList>("DoublyLinkedList", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
-    
+    try {
+        results_["DoublyLinkedList"] = run_benchmark_for_structure<DoublyLinkedList>("DoublyLinkedList", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
+    } catch (const std::exception& e) {
+        std::cerr << "Erro ao executar benchmark para DoublyLinkedList: " << e.what() << std::endl;
+    }
     std::cout << "Benchmarking AVLTree (Padrao)..." << std::endl;
-    results_["AVLTree"] = run_benchmark_for_structure<AVLTree>("AVLTree", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
-
+    try{
+        results_["AVLTree"] = run_benchmark_for_structure<AVLTree>("AVLTree", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
+    } catch (const std::exception& e) {
+        std::cerr << "Erro ao executar benchmark para AVLTree: " << e.what() << std::endl;
+    }
     std::cout << "Benchmarking HashTable (Padrao)..." << std::endl;
-    results_["HashTable"] = run_benchmark_for_structure<HashTable>("HashTable", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
-    
+    try{
+        results_["HashTable"] = run_benchmark_for_structure<HashTable>("HashTable", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
+    } catch (const std::exception& e) {
+        std::cerr << "Erro ao executar benchmark para HashTable: " << e.what() << std::endl;
+    }
     std::cout << "Benchmarking KDTree (Padrao)..." << std::endl;
-    results_["KDTree"] = run_benchmark_for_structure<KDTree>("KDTree", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
-
+    try{
+        results_["KDTree"] = run_benchmark_for_structure<KDTree>("KDTree", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
+    } catch (const std::exception& e) {
+        std::cerr << "Erro ao executar benchmark para KDTree: " << e.what() << std::endl;
+    }
     std::cout << "Benchmarking SkipList (Padrao)..." << std::endl;
-    results_["SkipList"] = run_benchmark_for_structure<SkipList>("SkipList", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
-    
+    try{
+        results_["SkipList"] = run_benchmark_for_structure<SkipList>("SkipList", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
+    } catch (const std::exception& e) {
+        std::cerr << "Erro ao executar benchmark para SkipList: " << e.what() << std::endl;
+    }
     std::cout << "Benchmarking PerfectHashTable (Padrao)..." << std::endl;
-    results_["PerfectHashTable"] = run_benchmark_for_structure<PerfectHashTable>("PerfectHashTable", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
+    try{
+        results_["PerfectHashTable"] = run_benchmark_for_structure<PerfectHashTable>("PerfectHashTable", data_for_insertion, records_for_search_remove_ops, non_existent_records_for_ops, no_restriction_config);
+    } catch (const std::exception& e) {
+        std::cerr << "Erro ao executar benchmark para PerfectHashTable: " << e.what() << std::endl;
+    }
 }
 
 void BenchmarkRunner::run_scalability_tests() {
@@ -224,6 +243,9 @@ void BenchmarkRunner::run_max_size_restriction_tests(size_t max_elements_limit) 
     results_["AVLTree" + cfg.name_suffix] = run_benchmark_for_structure<AVLTree>("AVLTree" + cfg.name_suffix, data_for_test, ops_subset, non_existent_ops, cfg);
     results_["HashTable" + cfg.name_suffix] = run_benchmark_for_structure<HashTable>("HashTable" + cfg.name_suffix, data_for_test, ops_subset, non_existent_ops, cfg);
     results_["DoublyLinkedList" + cfg.name_suffix] = run_benchmark_for_structure<DoublyLinkedList>("DoublyLinkedList" + cfg.name_suffix, data_for_test, ops_subset, non_existent_ops, cfg);
+    results_["KDTree" + cfg.name_suffix] = run_benchmark_for_structure<KDTree>("KDTree" + cfg.name_suffix, data_for_test, ops_subset, non_existent_ops, cfg);
+    results_["SkipList" + cfg.name_suffix] = run_benchmark_for_structure<SkipList>("SkipList" + cfg.name_suffix, data_for_test, ops_subset, non_existent_ops, cfg);
+    results_["PerfectHashTable" + cfg.name_suffix] = run_benchmark_for_structure<PerfectHashTable>("PerfectHashTable" + cfg.name_suffix, data_for_test, ops_subset, non_existent_ops, cfg);
 }
 
 void BenchmarkRunner::run_concurrency_simulation_tests(std::chrono::milliseconds yield_time, int ops_per_yield) {
@@ -243,6 +265,9 @@ void BenchmarkRunner::run_concurrency_simulation_tests(std::chrono::milliseconds
     results_["DoublyLinkedList" + cfg.name_suffix] = run_benchmark_for_structure<DoublyLinkedList>("DoublyLinkedList" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
     results_["AVLTree" + cfg.name_suffix] = run_benchmark_for_structure<AVLTree>("AVLTree" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
     results_["SkipList" + cfg.name_suffix] = run_benchmark_for_structure<SkipList>("SkipList" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
+    results_["HashTable" + cfg.name_suffix] = run_benchmark_for_structure<HashTable>("HashTable" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
+    results_["PerfectHashTable" + cfg.name_suffix] = run_benchmark_for_structure<PerfectHashTable>("PerfectHashTable" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
+    results_["KDTree" + cfg.name_suffix] = run_benchmark_for_structure<KDTree>("KDTree" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
 }
 
 void BenchmarkRunner::run_high_latency_io_tests(std::chrono::milliseconds max_io_latency) {
@@ -260,6 +285,9 @@ void BenchmarkRunner::run_high_latency_io_tests(std::chrono::milliseconds max_io
 
     results_["AVLTree" + cfg.name_suffix] = run_benchmark_for_structure<AVLTree>("AVLTree" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
     results_["HashTable" + cfg.name_suffix] = run_benchmark_for_structure<HashTable>("HashTable" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
+    results_["KDTree" + cfg.name_suffix] = run_benchmark_for_structure<KDTree>("KDTree" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
+    results_["SkipList" + cfg.name_suffix] = run_benchmark_for_structure<SkipList>("SkipList" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
+    results_["DoublyLinkedList" + cfg.name_suffix] = run_benchmark_for_structure<DoublyLinkedList>("DoublyLinkedList" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
     results_["PerfectHashTable" + cfg.name_suffix] = run_benchmark_for_structure<PerfectHashTable>("PerfectHashTable" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
 }
 
@@ -278,6 +306,9 @@ void BenchmarkRunner::run_irregular_arrival_tests(std::chrono::milliseconds max_
 
     results_["KDTree" + cfg.name_suffix] = run_benchmark_for_structure<KDTree>("KDTree" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
     results_["HashTable" + cfg.name_suffix] = run_benchmark_for_structure<HashTable>("HashTable" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
+    results_["AVLTree" + cfg.name_suffix] = run_benchmark_for_structure<AVLTree>("AVLTree" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
+    results_["DoublyLinkedList" + cfg.name_suffix] = run_benchmark_for_structure<DoublyLinkedList>("DoublyLinkedList" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
+    results_["PerfectHashTable" + cfg.name_suffix] = run_benchmark_for_structure<PerfectHashTable>("PerfectHashTable" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
     results_["SkipList" + cfg.name_suffix] = run_benchmark_for_structure<SkipList>("SkipList" + cfg.name_suffix, all_data_, search_remove_subset, non_existent_subset, cfg);
 }
 
@@ -626,7 +657,7 @@ void BenchmarkRunner::save_results_to_csv(const std::string& filepath) const {
             } else {
                  std::string val_str = value;
                  std::replace(val_str.begin(), val_str.end(), ',', ';'); // Evita que vírgula no valor quebre CSV
-                 outfile << """ << val_str << """;
+                 outfile << """" << val_str << """";
             }
             outfile << "," << unit 
                     << "," << metrics.actual_elements_processed_insertion

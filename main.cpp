@@ -21,6 +21,7 @@
 #include "statistic.h"          
 #include "filtragem.h"
 #include "tendencias.h"
+#include "benchmark_menu.h"
 
 int main() {
     const std::string csv_filepath = "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/earthquake_dataset.csv";
@@ -184,19 +185,13 @@ PredefinedLinearModel python_model(python_b0, python_b1, python_r_squared, pytho
             case 5:
                 manage_email_cadastro(registered_emails);
                 break;
-            case 6: {
+            case 6: 
                 if (all_records.empty()) {
                     std::cout << "Nao e possivel executar benchmarks: o dataset principal esta vazio." << std::endl;
-                    // std::cout << "Pressione Enter para continuar...";
                 } else {
-                    BenchmarkRunner runner(all_records, "Benchmark_Completo_Dataset_Principal");
-                    runner.run_all_benchmarks_and_restricted_tests();
-                    runner.save_results_to_csv("benchmark_results.csv");
-                    std::cout << "Benchmarks executados e resultados salvos em 'benchmark_results.csv'." << std::endl;
-                    // std::cout << "Pressione Enter para continuar...";
+                    benchmark_menu(all_records);
                 }
                 break;
-            }
             case 0:
                 std::cout << "Encerrando o programa..." << std::endl;
                 break;
