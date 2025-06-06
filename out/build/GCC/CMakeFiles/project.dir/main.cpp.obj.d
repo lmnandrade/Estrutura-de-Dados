@@ -245,10 +245,6 @@ CMakeFiles/project.dir/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/chrono.h \
  C:/msys64/ucrt64/include/c++/14.2.0/ratio \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/parse_numbers.h \
- C:/msys64/ucrt64/include/c++/14.2.0/fstream \
- C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
- C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/fstream.tcc \
- C:/msys64/ucrt64/include/c++/14.2.0/utility \
- C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_relops.h \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\statistic.h
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\statistic.h \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\filtragem.h \
+ C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\tendencias.h

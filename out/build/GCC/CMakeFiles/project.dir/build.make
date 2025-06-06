@@ -267,6 +267,34 @@ CMakeFiles/project.dir/statistic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/project.dir/statistic.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\statistic.cpp -o CMakeFiles\project.dir\statistic.cpp.s
 
+CMakeFiles/project.dir/filtragem.cpp.obj: CMakeFiles/project.dir/flags.make
+CMakeFiles/project.dir/filtragem.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/filtragem.cpp
+CMakeFiles/project.dir/filtragem.cpp.obj: CMakeFiles/project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/project.dir/filtragem.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/project.dir/filtragem.cpp.obj -MF CMakeFiles\project.dir\filtragem.cpp.obj.d -o CMakeFiles\project.dir\filtragem.cpp.obj -c C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\filtragem.cpp
+
+CMakeFiles/project.dir/filtragem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/project.dir/filtragem.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\filtragem.cpp > CMakeFiles\project.dir\filtragem.cpp.i
+
+CMakeFiles/project.dir/filtragem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/project.dir/filtragem.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\filtragem.cpp -o CMakeFiles\project.dir\filtragem.cpp.s
+
+CMakeFiles/project.dir/tendencias.cpp.obj: CMakeFiles/project.dir/flags.make
+CMakeFiles/project.dir/tendencias.cpp.obj: C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/tendencias.cpp
+CMakeFiles/project.dir/tendencias.cpp.obj: CMakeFiles/project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/project.dir/tendencias.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/project.dir/tendencias.cpp.obj -MF CMakeFiles\project.dir\tendencias.cpp.obj.d -o CMakeFiles\project.dir\tendencias.cpp.obj -c C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\tendencias.cpp
+
+CMakeFiles/project.dir/tendencias.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/project.dir/tendencias.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\tendencias.cpp > CMakeFiles\project.dir\tendencias.cpp.i
+
+CMakeFiles/project.dir/tendencias.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/project.dir/tendencias.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\tendencias.cpp -o CMakeFiles\project.dir\tendencias.cpp.s
+
 # Object files for target project
 project_OBJECTS = \
 "CMakeFiles/project.dir/csv_reader.cpp.obj" \
@@ -282,7 +310,9 @@ project_OBJECTS = \
 "CMakeFiles/project.dir/alerta.cpp.obj" \
 "CMakeFiles/project.dir/benchmark.cpp.obj" \
 "CMakeFiles/project.dir/main.cpp.obj" \
-"CMakeFiles/project.dir/statistic.cpp.obj"
+"CMakeFiles/project.dir/statistic.cpp.obj" \
+"CMakeFiles/project.dir/filtragem.cpp.obj" \
+"CMakeFiles/project.dir/tendencias.cpp.obj"
 
 # External object files for target project
 project_EXTERNAL_OBJECTS =
@@ -301,11 +331,13 @@ project.exe: CMakeFiles/project.dir/alerta.cpp.obj
 project.exe: CMakeFiles/project.dir/benchmark.cpp.obj
 project.exe: CMakeFiles/project.dir/main.cpp.obj
 project.exe: CMakeFiles/project.dir/statistic.cpp.obj
+project.exe: CMakeFiles/project.dir/filtragem.cpp.obj
+project.exe: CMakeFiles/project.dir/tendencias.cpp.obj
 project.exe: CMakeFiles/project.dir/build.make
 project.exe: CMakeFiles/project.dir/linkLibs.rsp
 project.exe: CMakeFiles/project.dir/objects1.rsp
 project.exe: CMakeFiles/project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\out\build\GCC\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable project.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\project.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

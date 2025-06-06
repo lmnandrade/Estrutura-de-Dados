@@ -1,253 +1,112 @@
 #ifndef BENCHMARK_H
 #define BENCHMARK_H
 
-#include "csv_reader.h"
-#include "lista_dupla_ligada.h"
-#include "avl_tree.h"
-#include "hash_table.h"
-#include "skip_list.h"
-#include "kd_tree.h"
-#include "operations_menu.h" // Para KDTreeHelpers
-
 #include <vector>
 #include <string>
-#include <chrono>
-#include <fstream>
 #include <map>
-#include <iostream>
-#include <algorithm>
-#include <random>
-#include <utility>
-#include <type_traits>
+#include <chrono> // Para std::chrono
+#include <random> // Para std::mt19937
+#include "csv_reader.h" // Para EarthquakeRecord
 
-// Forward declaration for EarthquakeRecord
-struct EarthquakeRecord;
-
-// Estrutura para armazenar os resultados de um único teste de benchmark
-struct BenchmarkResult {
-    std::string data_structure_name;
-    std::string operation_type;
-    int input_size;
-    long long duration_ns;      // Duração da operação em nanossegundos
-    long memory_usage_kb;       // Delta de memória em KB (ou uso total, dependendo da medição)
-    std::string restriction_scenario;
-
-    BenchmarkResult(std::string ds_name, std::string op, int size, long long dur, long mem, std::string scenario)
-        : data_structure_name(std::move(ds_name)), operation_type(std::move(op)),
-          input_size(size), duration_ns(dur), memory_usage_kb(mem), restriction_scenario(std::move(scenario)) {}
+// Enum para os modos de restrição
+enum class RestrictionMode {
+    NONE,
+    MAX_STRUCTURE_SIZE,
+    SIMULATE_CONCURRENCY,
+    SIMULATE_HIGH_LATENCY_IO,
+    IRREGULAR_DATA_ARRIVAL
 };
 
-// Classe principal para executar e gerenciar os benchmarks
+// Configuração para testes restritos
+struct RestrictionConfig {
+    RestrictionMode mode = RestrictionMode::NONE;
+    std::string name_suffix = ""; // Ex: "_MaxSize10k"
+
+    // Parâmetros específicos da restrição
+    size_t max_elements = 0;
+    std::chrono::milliseconds concurrency_yield_time = std::chrono::milliseconds(5);
+    int concurrency_ops_per_yield = 20;
+    std::chrono::milliseconds io_max_latency_ms = std::chrono::milliseconds(0);
+    std::chrono::milliseconds arrival_max_interval_ms = std::chrono::milliseconds(0);
+    
+    std::mt19937* rng_engine = nullptr; // Deve ser fornecido externamente se necessário
+
+    RestrictionConfig(RestrictionMode m = RestrictionMode::NONE, std::string suffix = "") 
+        : mode(m), name_suffix(std::move(suffix)) {}
+};
+
+// Estrutura para armazenar as métricas de um benchmark
+struct BenchmarkMetrics {
+    long long insertion_time_ms = 0;
+    double insertion_time_us_avg_element = 0.0;
+    double search_existing_time_us_avg = 0.0;
+    double search_non_existent_time_us_avg = 0.0;
+    double removal_time_us_avg = 0.0;
+    size_t memory_usage_bytes = 0;
+    std::string collision_rate_info = "N/A";
+    double avg_access_time_us = 0.0;
+    double avg_latency_us_mixed_ops = 0.0;
+    size_t actual_elements_processed_insertion = 0; // Elementos efetivamente inseridos
+    size_t actual_elements_processed_ops = 0;       // Elementos usados para busca/remoção
+};
+
 class BenchmarkRunner {
 public:
-    BenchmarkRunner(const std::vector<EarthquakeRecord>& all_data, const std::string& scenario_name);
-
-    void run_all_benchmarks();
-    void save_results_to_csv(const std::string& filename) const;
+    BenchmarkRunner(const std::vector<EarthquakeRecord>& records, const std::string& benchmark_name);
+    
+    // Executa os benchmarks padrão E os restritos pré-configurados
+    void run_all_benchmarks_and_restricted_tests(); 
+    
+    void save_results_to_csv(const std::string& filepath) const;
 
 private:
-    std::vector<EarthquakeRecord> full_dataset;
-    std::vector<BenchmarkResult> results;
-    std::string current_scenario_name;
+    std::vector<EarthquakeRecord> all_data_;
+    std::string benchmark_name_;
+    std::map<std::string, BenchmarkMetrics> results_;
+    std::mt19937 rng_for_benchmarks_; // RNG para uso interno nos benchmarks
 
-    // Métodos template para benchmarking
+    // Função principal que chama os benchmarks padrão
+    void run_standard_benchmarks(
+        const std::vector<EarthquakeRecord>& data_for_insertion,
+        const std::vector<EarthquakeRecord>& records_for_search_remove_ops,
+        const std::vector<EarthquakeRecord>& non_existent_records_for_ops);
+    
+    // Testes de escalabilidade
+    void run_scalability_tests();
+
+    // Funções dedicadas para cada tipo de teste restrito
+    void run_max_size_restriction_tests(size_t max_elements_limit);
+    void run_concurrency_simulation_tests(std::chrono::milliseconds yield_time, int ops_per_yield);
+    void run_high_latency_io_tests(std::chrono::milliseconds max_io_latency);
+    void run_irregular_arrival_tests(std::chrono::milliseconds max_arrival_interval);
+    void run_frequent_reindex_tests();
+
+    // A função de benchmark genérica que aceita RestrictionConfig
     template<typename Structure>
-    void benchmark_structure(const std::string& structure_name);
-
+    BenchmarkMetrics run_benchmark_for_structure(
+        const std::string& structure_id_prefix,
+        const std::vector<EarthquakeRecord>& data_for_insertion,
+        const std::vector<EarthquakeRecord>& records_for_search_remove_ops,
+        const std::vector<EarthquakeRecord>& non_existent_records_for_ops,
+        const RestrictionConfig& config = RestrictionConfig{}
+    );
+    
+    // Helper para medir tempo de busca, agora com config
     template<typename Structure>
-    long long measure_insertion(Structure& ds, const std::vector<EarthquakeRecord>& records_to_insert);
+    double measure_search_time_avg(
+        Structure& ds, 
+        const std::vector<EarthquakeRecord>& records_to_search,
+        const RestrictionConfig& config
+    );
 
-    template<typename Structure>
-    long long measure_search_specific(const Structure& ds, const std::vector<EarthquakeRecord>& records_to_search);
+    // Helper para info de colisão
+    template<typename HashTableType>
+    std::string get_hash_collision_info(const HashTableType& ht);
 
-    template<typename Structure>
-    long long measure_search_random(const Structure& ds, int num_searches);
+    // Helpers para gerar dados
+    std::vector<EarthquakeRecord> generate_non_existent_records(const std::vector<EarthquakeRecord>& existing_records, size_t count);
+    std::vector<EarthquakeRecord> prepare_data_for_ops(const std::vector<EarthquakeRecord>& source_data, size_t num_ops);
 
-    template<typename Structure>
-    long long measure_removal(Structure& ds, const std::vector<EarthquakeRecord>& records_to_remove);
-
-    // Funções auxiliares (implementadas em benchmark.cpp)
-    long get_current_memory_usage_kb();
-    std::vector<EarthquakeRecord> get_subset_of_data(int size) const;
-    EarthquakeRecord get_random_record_from_subset(const std::vector<EarthquakeRecord>& subset) const;
 };
-
-// --- IMPLEMENTAÇÕES DOS MÉTODOS TEMPLATE ---
-
-template<typename Structure>
-void BenchmarkRunner::benchmark_structure(const std::string& structure_name) {
-    std::cout << "Benchmarking: " << structure_name << " (Cenario: " << current_scenario_name << ")..." << std::endl;
-    std::vector<int> sizes_to_test = {100, 500, 1000, 5000, 10000};
-
-    for (int current_size : sizes_to_test) {
-        if (static_cast<size_t>(current_size) > full_dataset.size() && !full_dataset.empty()) {
-            std::cout << "  Tamanho de teste " << current_size << " excede o dataset original (" << full_dataset.size() << "). Pulando este tamanho." << std::endl;
-            continue;
-        }
-        std::cout << "  Testando com tamanho de entrada: " << current_size << std::endl;
-
-        std::vector<EarthquakeRecord> subset;
-        if (full_dataset.empty() && current_size > 0) {
-            std::cout << "    AVISO: Dataset original vazio. O subset para o tamanho " << current_size << " estara vazio." << std::endl;
-        } else {
-            subset = get_subset_of_data(current_size);
-        }
-
-        if (subset.empty() && current_size > 0) {
-            std::cout << "    AVISO: Subset para o tamanho " << current_size << " esta vazio (apos get_subset_of_data). Pulando operacoes para este tamanho." << std::endl;
-            continue;
-        }
-
-        Structure ds;
-
-        // 1. Inserção
-        long memory_before_op = get_current_memory_usage_kb();
-        long long insert_duration = measure_insertion(ds, subset);
-        long memory_after_op = get_current_memory_usage_kb();
-        long memory_delta = (memory_after_op >= memory_before_op && memory_before_op != 0 && memory_after_op != 0) ? (memory_after_op - memory_before_op) : 0;
-        if (memory_before_op == 0 && memory_after_op == 0) memory_delta = 0;
-        results.emplace_back(structure_name, "Insertion", current_size, insert_duration, memory_delta, current_scenario_name);
-        std::cout << "    Insercao (" << subset.size() << " itens): " << insert_duration << " ns, Memoria Delta: " << memory_delta << " KB" << std::endl;
-
-        if (!subset.empty()) {
-            // 2. Busca Específica
-            long long search_specific_duration = measure_search_specific(ds, subset);
-            results.emplace_back(structure_name, "Search_Specific_All_Subset", current_size, search_specific_duration, 0, current_scenario_name);
-            std::cout << "    Busca Especifica (" << subset.size() << " itens): " << search_specific_duration << " ns" << std::endl;
-
-            // 3. Busca Aleatória
-            int num_random_searches = std::max(1, static_cast<int>(subset.size() / 10));
-            if (num_random_searches > 0) {
-                long long search_random_duration = measure_search_random(ds, num_random_searches);
-                results.emplace_back(structure_name, "Search_Random_10%", current_size, search_random_duration, 0, current_scenario_name);
-                std::cout << "    Busca Aleatoria (" << num_random_searches << " itens): " << search_random_duration << " ns" << std::endl;
-            }
-
-            // 4. Remoção
-            memory_before_op = get_current_memory_usage_kb();
-            long long remove_duration = measure_removal(ds, subset);
-            memory_after_op = get_current_memory_usage_kb();
-            memory_delta = (memory_before_op >= memory_after_op && memory_before_op != 0 && memory_after_op != 0) ? (memory_before_op - memory_after_op) : 0;
-            if (memory_before_op == 0 && memory_after_op == 0) memory_delta = 0;
-            results.emplace_back(structure_name, "Removal_All_Subset", current_size, remove_duration, memory_delta, current_scenario_name);
-            std::cout << "    Remocao (" << subset.size() << " itens): " << remove_duration << " ns, Memoria Delta: " << memory_delta << " KB" << std::endl;
-        }
-    }
-    std::cout << "Benchmark para " << structure_name << " concluido." << std::endl;
-}
-
-template<typename Structure>
-long long BenchmarkRunner::measure_insertion(Structure& ds, const std::vector<EarthquakeRecord>& records_to_insert) {
-    if (records_to_insert.empty()) return 0;
-    auto start_time = std::chrono::high_resolution_clock::now();
-    for (const auto& record : records_to_insert) {
-        ds.insert_record(record);
-    }
-    auto end_time = std::chrono::high_resolution_clock::now();
-    return std::chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count();
-}
-
-template<typename Structure>
-long long BenchmarkRunner::measure_search_specific(const Structure& ds, const std::vector<EarthquakeRecord>& records_to_search) {
-    if (records_to_search.empty()) return 0;
-    auto start_time = std::chrono::high_resolution_clock::now();
-    volatile int found_count = 0;
-
-    for (const auto& record : records_to_search) {
-        if constexpr (std::is_same_v<Structure, HashTable> || std::is_same_v<Structure, SkipList>) {
-            if (ds.search_record(record.date, record.time, record.city) != nullptr) {
-                found_count++;
-            }
-        } else if constexpr (std::is_same_v<Structure, KDTree>) {
-            double lat, lon;
-            if (KDTreeHelpers::try_string_to_double(record.latitude, lat, false, "") &&
-                KDTreeHelpers::try_string_to_double(record.longitude, lon, false, "")) {
-                if (ds.search_nearest_neighbor(lat, lon) != nullptr) {
-                    found_count++;
-                }
-            }
-        } else {
-            bool item_found = false;
-            std::vector<EarthquakeRecord> all_ds_records;
-            if constexpr (std::is_same_v<Structure, AVLTree>) {
-                all_ds_records = ds.get_all_records();
-            } else if constexpr (std::is_same_v<Structure, DoublyLinkedList>) {
-                all_ds_records = ds.get_all_records_vector();
-            }
-            for (const auto& r_ds : all_ds_records) {
-                if (r_ds.date == record.date && r_ds.time == record.time && r_ds.city == record.city && r_ds.country == record.country) {
-                    item_found = true;
-                    break;
-                }
-            }
-            if (item_found) found_count++;
-        }
-    }
-    auto end_time = std::chrono::high_resolution_clock::now();
-    return std::chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count();
-}
-
-template<typename Structure>
-long long BenchmarkRunner::measure_search_random(const Structure& ds, int num_searches) {
-    if (full_dataset.empty() || num_searches <= 0) return 0;
-
-    std::vector<EarthquakeRecord> records_to_find_randomly;
-    int actual_num_searches = std::min(num_searches, static_cast<int>(full_dataset.size()));
-    if (actual_num_searches <= 0) return 0;
-
-    std::sample(full_dataset.begin(), full_dataset.end(),
-                std::back_inserter(records_to_find_randomly),
-                actual_num_searches, std::mt19937{std::random_device{}()});
-
-    auto start_time = std::chrono::high_resolution_clock::now();
-    volatile int found_count = 0;
-    for (const auto& record_to_find : records_to_find_randomly) {
-        if constexpr (std::is_same_v<Structure, HashTable> || std::is_same_v<Structure, SkipList>) {
-            if (ds.search_record(record_to_find.date, record_to_find.time, record_to_find.city) != nullptr) {
-                found_count++;
-            }
-        } else if constexpr (std::is_same_v<Structure, KDTree>) {
-            double lat, lon;
-            if (KDTreeHelpers::try_string_to_double(record_to_find.latitude, lat, false, "") &&
-                KDTreeHelpers::try_string_to_double(record_to_find.longitude, lon, false, "")) {
-                if (ds.search_nearest_neighbor(lat, lon) != nullptr) {
-                    found_count++;
-                }
-            }
-        } else {
-            bool item_found = false;
-            std::vector<EarthquakeRecord> all_ds_records;
-            if constexpr (std::is_same_v<Structure, AVLTree>) {
-                all_ds_records = ds.get_all_records();
-            } else if constexpr (std::is_same_v<Structure, DoublyLinkedList>) {
-                all_ds_records = ds.get_all_records_vector();
-            }
-            for (const auto& r_ds : all_ds_records) {
-                if (r_ds.date == record_to_find.date && r_ds.time == record_to_find.time && r_ds.city == record_to_find.city && r_ds.country == record_to_find.country) {
-                    item_found = true;
-                    break;
-                }
-            }
-            if (item_found) found_count++;
-        }
-    }
-    auto end_time = std::chrono::high_resolution_clock::now();
-    return std::chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count();
-}
-
-template<typename Structure>
-long long BenchmarkRunner::measure_removal(Structure& ds, const std::vector<EarthquakeRecord>& records_to_remove) {
-    if (records_to_remove.empty()) return 0;
-    auto start_time = std::chrono::high_resolution_clock::now();
-    for (const auto& record : records_to_remove) {
-        if constexpr (std::is_same_v<Structure, HashTable>) {
-            ds.remove_record(record.date, record.time, record.city);
-        } else {
-            ds.remove_record(record.date, record.time, record.city, record.country);
-        }
-    }
-    auto end_time = std::chrono::high_resolution_clock::now();
-    return std::chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count();
-}
 
 #endif // BENCHMARK_H

@@ -666,6 +666,30 @@ csv_reader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/csv_reader.cpp.s
 .PHONY : csv_reader.cpp.s
 
+filtragem.obj: filtragem.cpp.obj
+.PHONY : filtragem.obj
+
+# target to build an object file
+filtragem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/filtragem.cpp.obj
+.PHONY : filtragem.cpp.obj
+
+filtragem.i: filtragem.cpp.i
+.PHONY : filtragem.i
+
+# target to preprocess a source file
+filtragem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/filtragem.cpp.i
+.PHONY : filtragem.cpp.i
+
+filtragem.s: filtragem.cpp.s
+.PHONY : filtragem.s
+
+# target to generate assembly for a file
+filtragem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/filtragem.cpp.s
+.PHONY : filtragem.cpp.s
+
 hash_table.obj: hash_table.cpp.obj
 .PHONY : hash_table.obj
 
@@ -858,6 +882,30 @@ statistic.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/statistic.cpp.s
 .PHONY : statistic.cpp.s
 
+tendencias.obj: tendencias.cpp.obj
+.PHONY : tendencias.obj
+
+# target to build an object file
+tendencias.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/tendencias.cpp.obj
+.PHONY : tendencias.cpp.obj
+
+tendencias.i: tendencias.cpp.i
+.PHONY : tendencias.i
+
+# target to preprocess a source file
+tendencias.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/tendencias.cpp.i
+.PHONY : tendencias.cpp.i
+
+tendencias.s: tendencias.cpp.s
+.PHONY : tendencias.s
+
+# target to generate assembly for a file
+tendencias.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/tendencias.cpp.s
+.PHONY : tendencias.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -916,6 +964,9 @@ help:
 	@echo ... csv_reader.obj
 	@echo ... csv_reader.i
 	@echo ... csv_reader.s
+	@echo ... filtragem.obj
+	@echo ... filtragem.i
+	@echo ... filtragem.s
 	@echo ... hash_table.obj
 	@echo ... hash_table.i
 	@echo ... hash_table.s
@@ -940,6 +991,9 @@ help:
 	@echo ... statistic.obj
 	@echo ... statistic.i
 	@echo ... statistic.s
+	@echo ... tendencias.obj
+	@echo ... tendencias.i
+	@echo ... tendencias.s
 .PHONY : help
 
 
