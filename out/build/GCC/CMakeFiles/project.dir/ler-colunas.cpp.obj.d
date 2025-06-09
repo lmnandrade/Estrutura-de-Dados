@@ -1,5 +1,5 @@
 CMakeFiles/project.dir/ler-colunas.cpp.obj: \
- C:\Users\letic\OneDrive\Documentos\Repositorio-github\Estrutura-de-Dados\ler-colunas.cpp \
+ C:\Users\rebek\OneDrive\Documentos\GitHub\Repositorio-github\Estrutura-de-Dados\ler-colunas.cpp \
  C:/msys64/ucrt64/include/stdio.h \
  C:/msys64/ucrt64/include/corecrt_stdio_config.h \
  C:/msys64/ucrt64/include/corecrt.h C:/msys64/ucrt64/include/_mingw.h \

@@ -30,8 +30,12 @@ bool file_exists(const std::string& filepath) {
 }
 
 int main() {
-    const std::string csv_filepath = "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/earthquake_dataset.csv";
-
+std::string csv_filepath;
+std::cout << "Digite o caminho do arquivo CSV (ou pressione Enter para usar 'earthquake_dataset.csv'): ";
+std::getline(std::cin, csv_filepath);
+if (csv_filepath.empty()) {
+    csv_filepath = "earthquake_dataset.csv";
+}
 
     std::cout << "Bem-vindo ao Sistema de Monitoramento de Terremotos Globais!" << std::endl;
     std::cout << "Lendo o dataset de: " << csv_filepath << std::endl;
