@@ -10,7 +10,6 @@
 // Declaração da função
 void alerta_terremoto(
     const std::map<std::string, CountryRiskProfile>& country_risks,
-    const std::vector<std::string>& registered_emails,
     const std::vector<EarthquakeRecord>& all_raw_records
 );
 

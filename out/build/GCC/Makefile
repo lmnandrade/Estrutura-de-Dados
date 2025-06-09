@@ -594,30 +594,6 @@ benchmark.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/benchmark.cpp.s
 .PHONY : benchmark.cpp.s
 
-cadastro.obj: cadastro.cpp.obj
-.PHONY : cadastro.obj
-
-# target to build an object file
-cadastro.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/cadastro.cpp.obj
-.PHONY : cadastro.cpp.obj
-
-cadastro.i: cadastro.cpp.i
-.PHONY : cadastro.i
-
-# target to preprocess a source file
-cadastro.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/cadastro.cpp.i
-.PHONY : cadastro.cpp.i
-
-cadastro.s: cadastro.cpp.s
-.PHONY : cadastro.s
-
-# target to generate assembly for a file
-cadastro.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/cadastro.cpp.s
-.PHONY : cadastro.cpp.s
-
 classification.obj: classification.cpp.obj
 .PHONY : classification.obj
 
@@ -955,9 +931,6 @@ help:
 	@echo ... benchmark.obj
 	@echo ... benchmark.i
 	@echo ... benchmark.s
-	@echo ... cadastro.obj
-	@echo ... cadastro.i
-	@echo ... cadastro.s
 	@echo ... classification.obj
 	@echo ... classification.i
 	@echo ... classification.s

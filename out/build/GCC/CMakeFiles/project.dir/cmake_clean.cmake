@@ -5,8 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/project.dir/avl_tree.cpp.obj.d"
   "CMakeFiles/project.dir/benchmark.cpp.obj"
   "CMakeFiles/project.dir/benchmark.cpp.obj.d"
-  "CMakeFiles/project.dir/cadastro.cpp.obj"
-  "CMakeFiles/project.dir/cadastro.cpp.obj.d"
   "CMakeFiles/project.dir/classification.cpp.obj"
   "CMakeFiles/project.dir/classification.cpp.obj.d"
   "CMakeFiles/project.dir/csv_reader.cpp.obj"

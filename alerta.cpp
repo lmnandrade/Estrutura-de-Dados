@@ -8,7 +8,6 @@
 // Definição da função
 void alerta_terremoto(
     const std::map<std::string, CountryRiskProfile>& country_risks,
-    const std::vector<std::string>& registered_emails,
     const std::vector<EarthquakeRecord>& all_raw_records
 ) {
     std::cout << "\n--- Alerta de Terremoto ---" << std::endl;
@@ -88,14 +87,6 @@ void alerta_terremoto(
             alert_scope_message = "Alerta enviado para a CIDADE INTEIRA de " + alert_city + ".";
         }
         std::cout << alert_scope_message << std::endl;
-
-        if (registered_emails.empty()) {
-            std::cout << "Nenhum email cadastrado para receber alertas." << std::endl;
-        } else {
-            std::cout << "Emails que receberiam o alerta:" << std::endl;
-            for (const auto& email : registered_emails) {
-                std::cout << " - " << email << std::endl;
-            }
             std::cout << "\n--- Conteudo do Alerta (Simulacao de Envio) ---" << std::endl;
             std::cout << "Assunto: ALERTA DE TERREMOTO - " << alert_city << ", " << alert_country_clean << std::endl;
             std::cout << "Corpo: Um terremoto com magnitude estimada de " << std::fixed << std::setprecision(1) << mag_estimada
@@ -104,7 +95,7 @@ void alerta_terremoto(
                       << " Por favor, tome as precaucoes necessarias e siga as orientacoes das autoridades locais." << std::endl;
             std::cout << "-----------------------------------------------" << std::endl;
         }
-    } else {
+    else {
         std::cout << "\nAlerta NAO sera enviado com base nos criterios." << std::endl;
     }
 }

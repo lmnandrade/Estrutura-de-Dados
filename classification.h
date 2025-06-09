@@ -39,7 +39,9 @@ std::map<std::string, CountryRiskProfile> classify_countries_by_risk(
     const std::vector<EarthquakeRecord>& all_records
 );
 
-// Função auxiliar para exibir os resultados da classificação
 void print_country_risk_profiles(const std::map<std::string, CountryRiskProfile>& profiles);
+void print_country_risk_profiles(const std::map<std::string, CountryRiskProfile>& profiles);
+void menu_risco_paises(const std::map<std::string, CountryRiskProfile>& profiles);
+
 
 #endif // CLASSIFICATION_H

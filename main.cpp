@@ -16,7 +16,6 @@
 #include "skip_list.h"
 #include "perfect_hash.h"       
 #include "alerta.h"
-#include "cadastro.h"
 #include "benchmark.h"
 #include "statistic.h"          
 #include "filtragem.h"
@@ -25,7 +24,7 @@
 
 int main() {
     const std::string csv_filepath = "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/earthquake_dataset.csv";
-    std::vector<std::string> registered_emails;
+
 
     std::cout << "Bem-vindo ao Sistema de Monitoramento de Terremotos Globais!" << std::endl;
     std::cout << "Lendo o dataset de: " << csv_filepath << std::endl;
@@ -80,7 +79,7 @@ PredefinedLinearModel python_model(python_b0, python_b1, python_r_squared, pytho
         std::cout << "2. Alerta de Terremoto" << std::endl;
         std::cout << "3. Calculos Estatisticos sobre os Dados" << std::endl;
         std::cout << "4. Previsao de Impact Score com base na magnitude" << std::endl;
-        std::cout << "5. Cadastro para Alertas de Terremoto" << std::endl;
+        std::cout << "5. Ver classificação de risco" << std::endl;
         std::cout << "6. Executar Benchmarks" << std::endl;
         std::cout << "0. Sair do Programa" << std::endl;
         std::cout << "Sua escolha: ";
@@ -174,7 +173,7 @@ PredefinedLinearModel python_model(python_b0, python_b1, python_r_squared, pytho
                 break;
             }
             case 2:
-                alerta_terremoto(country_risks, registered_emails, all_records);
+                alerta_terremoto(country_risks, all_records);
                 break;
             case 3:
                 menu_estatisticas(all_records);
@@ -183,7 +182,7 @@ PredefinedLinearModel python_model(python_b0, python_b1, python_r_squared, pytho
                   show_trends_menu_with_predefined_model(all_records, python_model);
                 break;
             case 5:
-                manage_email_cadastro(registered_emails);
+                menu_risco_paises(country_risks);
                 break;
             case 6: 
                 if (all_records.empty()) {
