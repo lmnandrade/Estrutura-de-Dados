@@ -30,66 +30,38 @@ bool file_exists(const std::string& filepath) {
 }
 
 int main() {
-    // --- Configuração do Caminho do CSV ---
-    const std::string default_csv_filepath = "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/earthquake_dataset.csv";
-    std::string csv_filepath;
-    std::string user_input_path;
+    const std::string csv_filepath = "C:/Users/letic/OneDrive/Documentos/Repositorio-github/Estrutura-de-Dados/earthquake_dataset.csv";
+
 
     std::cout << "Bem-vindo ao Sistema de Monitoramento de Terremotos Globais!" << std::endl;
-    std::cout << "------------------------------------------------------------" << std::endl;
-    std::cout << "Por favor, insira o caminho completo para o arquivo CSV do dataset." << std::endl;
-    std::cout << "Caminho padrao: "" << default_csv_filepath << """ << std::endl;
-    std::cout << "Pressione ENTER para usar o caminho padrao ou digite o seu caminho: ";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // <-- Adicione esta linha
-    std::getline(std::cin, user_input_path);
+    std::cout << "Lendo o dataset de: " << csv_filepath << std::endl;
+std::vector<EarthquakeRecord> raw_records = read_earthquake_csv(csv_filepath);
 
-    std::getline(std::cin, user_input_path);
+if (raw_records.empty()) {
+    std::cerr << "ERRO: Nenhum registro foi lido do arquivo CSV ou o arquivo nao foi encontrado." << std::endl;
+    std::cerr << "Verifique o caminho: " << csv_filepath << std::endl;
+    std::cout << "Pressione Enter para sair...";
+    std::cin.get();
+    return 1;
+}
+std::cout << "\nIniciando filtragem dos dados..." << std::endl;
+int removed_during_sanitization = 0;
+// A variável 'all_records' agora conterá os dados limpos.
+std::vector<EarthquakeRecord> all_records = sanitize_earthquake_records(raw_records, removed_during_sanitization, true);
 
-    if (user_input_path.empty()) {
-        csv_filepath = default_csv_filepath;
-        std::cout << "Usando caminho padrao: " << csv_filepath << std::endl;
-    } else {
-        csv_filepath = user_input_path;
-        std::cout << "Usando caminho fornecido: " << csv_filepath << std::endl;
-    }
+if (removed_during_sanitization > 0) {
+    std::cout << "Filtragem concluida. " << removed_during_sanitization << " registros foram removidos." << std::endl;
+}
+std::cout << all_records.size() << " registros validos permanecem apos a filtragem." << std::endl;
 
-    // --- Leitura e Sanitização dos Dados ---
-    std::cout << "\nLendo o dataset de: " << csv_filepath << std::endl;
-    std::vector<EarthquakeRecord> raw_records = read_earthquake_csv(csv_filepath);
-
-    if (raw_records.empty()) {
-        std::cerr << "ERRO: Nenhum registro foi lido do arquivo CSV ou o arquivo nao foi encontrado/acessivel." << std::endl;
-        std::cerr << "Verifique o caminho: " << csv_filepath << std::endl;
-        if (!file_exists(csv_filepath)) {
-            std::cerr << "O arquivo especificado NAO EXISTE no caminho fornecido." << std::endl;
-        }
-        std::cout << "\nPressione Enter para sair...";
-        // Não precisa de std::cin.ignore aqui, pois std::getline já consumiu o Enter se houve.
-        // Se não houve (EOF), std::cin.get() também funcionará.
-        std::cin.get();
-        return 1;
-    }
-    std::cout << raw_records.size() << " registros brutos lidos do CSV." << std::endl;
-
-    std::cout << "\nIniciando sanitizacao dos dados..." << std::endl; // Alterei "filtragem" para "sanitização" para consistência com o nome da função
-    int removed_during_sanitization = 0;
-    std::vector<EarthquakeRecord> all_records = sanitize_earthquake_records(raw_records, removed_during_sanitization, true);
-
-    if (removed_during_sanitization > 0) {
-        std::cout << "Sanitizacao concluida. " << removed_during_sanitization << " registros foram removidos." << std::endl;
-    }
-    std::cout << all_records.size() << " registros validos permanecem apos a sanitizacao." << std::endl;
-
-    if (all_records.empty() && !raw_records.empty()) {
-        std::cerr << "ALERTA: Todos os registros foram removidos durante a sanitizacao." << std::endl;
-        std::cout << "Verifique os criterios de sanitizacao ou a qualidade dos dados no CSV." << std::endl;
-        std::cout << "Pressione Enter para continuar (o programa pode nao funcionar como esperado)...";
-        std::cin.get();
-    } else if (all_records.empty() && raw_records.empty()){
-         // Este caso já é tratado pelo primeiro if que verifica raw_records.empty() e sai.
-         // Se chegou aqui e all_records está vazio, mas raw_records não estava, o alerta acima é disparado.
-         // Se raw_records estava vazio, o programa já teria saído.
-    }
+if (all_records.empty() && !raw_records.empty()) {
+    std::cerr << "ALERTA: Todos os registros foram removidos durante a filtragem." << std::endl;
+    std::cout << "Pressione Enter para continuar (o programa pode nao funcionar como esperado)...";
+    std::cin.get();
+    // Você pode decidir sair aqui se for crítico não ter dados.
+} else if (all_records.empty() && raw_records.empty()){
+     // Já tratado pelo if anterior de raw_records.empty()
+}
 
     // --- Classificação de Risco e Modelo de Tendência ---
     std::cout << "\nCalculando perfis de risco dos paises com base nos dados sanitizados..." << std::endl;
